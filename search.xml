@@ -4,12 +4,53 @@
   
     
     <entry>
-      <title>添加音乐</title>
+      <title>Spring boot 子模块不同包名下controller接口404问题解决方案</title>
+      <link href="/posts/8f1686ee.html"/>
+      <url>/posts/8f1686ee.html</url>
+      
+        <content type="html"><![CDATA[<p>项目背景，在做项目时使用了一套别人的Spring boot三方开源系统当基础框架，然后在此系统基础上增加子模块，书写新的controller接口和业务逻辑。项目结构如下图：<br><img src="/images/springboot-maven-404/1project.png" alt="project"><br>system是@SpringBootApplication标注类所在的主工程模块，statistics是我建立的子模块，我在该子模块下建立了controller接口，也进行了注解，但是启动后访问该接口，提示404错误找不到该接口。</p><p>经过排查解决过程如下：<br>1、@SpringBootApplication标注类一定要增加@ComponentScan标注，标识主模块包名+子模块包名</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org/jeecg/JeecgSystemApplication.java</span><br><span class="line">@ComponentScan(&#123;&quot;org.jeecg.*&quot;,&quot;com.huani.*&quot;&#125;)</span><br></pre></td></tr></table></figure><p>2、务必在主模块pom.xml中依赖子模块，网上很多教程根本没说这一步，只说使用@ComponentScan标注，只使用@ComponentScan标注，亲测无效！<br><img src="/images/springboot-maven-404/2maven1.png" alt="maven"><br>3、@ComponentScan标注了，主模块pom.xml把子模块也导入后，务必刷新maven依赖，否则还是不会生效，不要以为直接run就可以了，我就是被这里坑了一下午，点击Reload project<br><img src="/images/springboot-maven-404/3reload.png" alt="reload"><br>4、mybatis 记得修改</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org/jeecg/config/mybatis/MybatisPlusSaasConfig.java</span><br><span class="line">@MapperScan(value=&#123;&quot;org.jeecg.modules.**.mapper*&quot;,&quot;com.huani.**.mapper*&quot;&#125;)</span><br></pre></td></tr></table></figure><p>5、这时可以运行了，各位可以看到，刷新请求不在是404了 打完收工!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> springboot </category>
+          
+          <category> Java </category>
+          
+          <category> Maven </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> springboot </tag>
+            
+            <tag> maven </tag>
+            
+            <tag> 404 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo 博客添加音乐</title>
       <link href="/posts/cd52224a.html"/>
       <url>/posts/cd52224a.html</url>
       
-        <content type="html"><![CDATA[<p>不少小伙伴发现最近安知鱼主题的音乐胶囊配置无效或者音乐馆没有界面出来，原因其实是因为官方的meting api因为某种原因挂掉了。<br>既然知道了问题所在，就很好解决了，安知鱼主题的配置文件CDN选项自带有meting_api配置，我们可以自己搭建meting api以提高访问性和稳定性，或者使用其他人提供出来的免费API，只不过稳定性可能会没有那么高。<br>自建API</p><p>项目地址meting-api</p><p>部署方式此处提供宝塔部署方法，新建一个站点，然后将项目代码下载下来，上传到站点目录并解压</p><p>然后在当前目录执行命令安装依赖</p><p>composer install</p><p>在根目录会有index.php，可以在这里调整参数设置API路径缓存及时间等等，详细见原项目README.md，博主全默认配置，注意配置完后可能会存在跨域的情况，可以修改index.php前面加上允许跨站的两行代码，修复这个情况，虽然本来就有这个，但是不知道为什么写在后面就会跨域，写在前面就不会再有这种情况了。<br>如果你是安知鱼主题，你只需要在主题配置文件的最下方修改CDN.option.meting_api</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meting_api: https://meting.qjqq.cn/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r</span><br><span class="line">#列如我的</span><br><span class="line">meting_api: https://api.injahow.cn/meting/?type=playlist&amp;id=102783891&amp;servernetease</span><br></pre></td></tr></table></figure><p>进阶</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">参数说明</span><br><span class="line">server: 数据源</span><br><span class="line">     netease 网易云音乐(默认)</span><br><span class="line">     tencent QQ音乐</span><br><span class="line"></span><br><span class="line">type: 类型</span><br><span class="line">     name 歌曲名</span><br><span class="line">     artist 歌手</span><br><span class="line">     url 链接</span><br><span class="line">     pic 封面</span><br><span class="line">     lrc 歌词</span><br><span class="line">     song 单曲</span><br><span class="line">     playlist 歌单</span><br><span class="line"></span><br><span class="line">id: 类型ID（封面ID/单曲ID/歌单ID）</span><br><span class="line"></span><br><span class="line">GitHub：meting-api，此API基于 Meting 构建。</span><br></pre></td></tr></table></figure><p>自建API以后会发现提供的cover图非常小只有120<em>120，导致在音乐馆页面的封面图很模糊，可以通过修改src&#x2F;Meting.php的824行左右代码，将所有调用pic方法的$size都变成300</em>300</p><p>弊端就是图片会变大一点点，各有取舍。<br>开放API</p><p>在官方的meting api挂掉以后涌现了一大批优秀的公益api</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://api.injahow.cn/meting/</span><br><span class="line">https://meting.qjqq.cn/</span><br><span class="line">https://meting.qjqq.cn/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r</span><br><span class="line">https://api.injahow.cn/meting/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r</span><br></pre></td></tr></table></figure><p>在安知鱼主题中只需在CDN.option.meting_api 填入下面中的任何一个即可</p>]]></content>
+        <content type="html"><![CDATA[<p>不少小伙伴发现最近安知鱼主题的音乐胶囊配置无效或者音乐馆没有界面出来，原因其实是因为官方的meting api因为某种原因挂掉了。<br>既然知道了问题所在，就很好解决了，安知鱼主题的配置文件CDN选项自带有meting_api配置，我们可以自己搭建meting api以提高访问性和稳定性，或者使用其他人提供出来的免费API，只不过稳定性可能会没有那么高。<br>自建API</p><p>项目地址meting-api</p><p>部署方式此处提供宝塔部署方法，新建一个站点，然后将项目代码下载下来，上传到站点目录并解压</p><p>然后在当前目录执行命令安装依赖</p><p>composer install</p><p>在根目录会有index.php，可以在这里调整参数设置API路径缓存及时间等等，详细见原项目README.md，博主全默认配置，注意配置完后可能会存在跨域的情况，可以修改index.php前面加上允许跨站的两行代码，修复这个情况，虽然本来就有这个，但是不知道为什么写在后面就会跨域，写在前面就不会再有这种情况了。<br>如果你是安知鱼主题，你只需要在主题配置文件的最下方修改CDN.option.meting_api</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meting_api: https://meting.qjqq.cn/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r</span><br><span class="line">#列如我的</span><br><span class="line">meting_api: https://api.injahow.cn/meting/?type=playlist&amp;id=102783891&amp;server=netease</span><br></pre></td></tr></table></figure><p>进阶</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">参数说明</span><br><span class="line">server: 数据源</span><br><span class="line">     netease 网易云音乐(默认)</span><br><span class="line">     tencent QQ音乐</span><br><span class="line"></span><br><span class="line">type: 类型</span><br><span class="line">     name 歌曲名</span><br><span class="line">     artist 歌手</span><br><span class="line">     url 链接</span><br><span class="line">     pic 封面</span><br><span class="line">     lrc 歌词</span><br><span class="line">     song 单曲</span><br><span class="line">     playlist 歌单</span><br><span class="line"></span><br><span class="line">id: 类型ID（封面ID/单曲ID/歌单ID）</span><br><span class="line"></span><br><span class="line">GitHub：meting-api，此API基于 Meting 构建。</span><br></pre></td></tr></table></figure><p>自建API以后会发现提供的cover图非常小只有120<em>120，导致在音乐馆页面的封面图很模糊，可以通过修改src&#x2F;Meting.php的824行左右代码，将所有调用pic方法的$size都变成300</em>300</p><p>弊端就是图片会变大一点点，各有取舍。<br>开放API</p><p>在官方的meting api挂掉以后涌现了一大批优秀的公益api</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://api.injahow.cn/meting/</span><br><span class="line">https://meting.qjqq.cn/</span><br><span class="line">https://meting.qjqq.cn/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r</span><br><span class="line">https://api.injahow.cn/meting/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r</span><br></pre></td></tr></table></figure><p>在安知鱼主题中只需在CDN.option.meting_api 填入下面中的任何一个即可</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 音乐 </category>
+          
+      </categories>
       
       
         <tags>
@@ -29,7 +70,7 @@
       <link href="/posts/adc9b3fe.html"/>
       <url>/posts/adc9b3fe.html</url>
       
-        <content type="html"><![CDATA[<p>很早就了解到hexo 创建静态网站 博客 等工具了  最近在某游戏论坛被封30天  还警告要封我号  吓得我自己创建个网站</p><p>说一下步骤吧<br>1.创建hexo</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://hexo.io/zh-cn/docs/</span><br></pre></td></tr></table></figure><p>2.设置主题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docs.anheyu.com/initall.html</span><br></pre></td></tr></table></figure><p>3.git发布</p><p>4添加亿点点细节<br>配置 音乐墙、关于我、分类、相册集、留言板 框架自带用valine 注册设置一番即可<br>照文档操作基本就能创建很好的站点了</p><h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://fontawesome.com/icons?from=io</span><br><span class="line">使用 fa-brands fa-youtube</span><br></pre></td></tr></table></figure><p>想法 到成功实现 大概花了2天时间</p>]]></content>
+        <content type="html"><![CDATA[<p>很早就了解到hexo 创建静态网站 博客 等工具了  最近在某游戏论坛被封30天  还警告要封我号  吓得我自己创建个网站</p><p>说一下步骤吧<br>1.创建hexo</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://hexo.io/zh-cn/docs/</span><br></pre></td></tr></table></figure><p>2.设置主题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docs.anheyu.com/initall.html</span><br></pre></td></tr></table></figure><p>3.git发布</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: you git url </span><br><span class="line">  branch: master</span><br><span class="line">  message:  建站历程</span><br></pre></td></tr></table></figure><p>4添加亿点点细节<br>配置 音乐墙、关于我、分类、相册集、留言板 框架自带用valine 注册设置一番即可<br>照文档操作基本就能创建很好的站点了</p><h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://fontawesome.com/icons?from=io</span><br><span class="line">使用 fa-brands fa-youtube</span><br></pre></td></tr></table></figure><p>5 添加音乐<br><a href="https://91hm.github.io/posts/cd52224a.html">https://91hm.github.io/posts/cd52224a.html</a></p><p>想法 到成功实现 大概花了2天时间</p>]]></content>
       
       
       <categories>
@@ -99,17 +140,6 @@
     
     
     <entry>
-      <title>文章归档</title>
-      <link href="/archive.html"/>
-      <url>/archive.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>我的朋友</title>
       <link href="/friends.html"/>
       <url>/friends.html</url>
@@ -121,20 +151,9 @@
     
     
     <entry>
-      <title>相册集</title>
-      <link href="/album/index.html"/>
-      <url>/album/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>给我赞助</title>
-      <link href="/sponsor.html"/>
-      <url>/sponsor.html</url>
+      <title>文章归档</title>
+      <link href="/archive.html"/>
+      <url>/archive.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -154,20 +173,9 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>日常生活</title>
-      <link href="/dailyPhoto/index.html"/>
-      <url>/dailyPhoto/index.html</url>
+      <title>给我赞助</title>
+      <link href="/sponsor.html"/>
+      <url>/sponsor.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -187,9 +195,9 @@
     
     
     <entry>
-      <title>fcircle</title>
-      <link href="/fcircle/index.html"/>
-      <url>/fcircle/index.html</url>
+      <title>日常生活</title>
+      <link href="/dailyPhoto/index.html"/>
+      <url>/dailyPhoto/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -198,11 +206,22 @@
     
     
     <entry>
-      <title></title>
-      <link href="/json/music.json"/>
-      <url>/json/music.json</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[[{"name":"青花瓷","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002eFUFm2XYZ7z_2.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.lrc"},{"name":"稻香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.lrc"},{"name":"晴天","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.lrc"},{"name":"七里香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.lrc"},{"name":"花海","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.lrc"},{"name":"反方向的钟","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.lrc"},{"name":"兰亭序","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.lrc"},{"name":"说好的辛福呢","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的辛福呢.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的幸福呢.lrc"},{"name":"等你下课 (with 杨瑞代)","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003bSL0v4bpKAx_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.lrc"},{"name":"我落泪情绪零碎","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000bviBl4FjTpO_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.lrc"},{"name":"听妈妈的话","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.lrc"},{"name":"明明就","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003Ow85E3pnoqi_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.lrc"},{"name":"我是如此相信","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000001hGx1Z0so1YX_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.lrc"},{"name":"发如雪","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M0000024bjiL2aocxT_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.lrc"},{"name":"以父之名","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.lrc"},{"name":"园游会","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.lrc"},{"name":"本草纲目","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.lrc"},{"name":"龙卷风","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.lrc"}]]]></content>
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>相册集</title>
+      <link href="/album/index.html"/>
+      <url>/album/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -220,11 +239,33 @@
     
     
     <entry>
+      <title>fcircle</title>
+      <link href="/fcircle/index.html"/>
+      <url>/fcircle/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>音乐馆</title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/json/music.json"/>
+      <url>/json/music.json</url>
+      
+        <content type="html"><![CDATA[[{"name":"青花瓷","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002eFUFm2XYZ7z_2.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/青花瓷/青花瓷.lrc"},{"name":"稻香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/稻香/稻香.lrc"},{"name":"晴天","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/晴天/晴天.lrc"},{"name":"七里香","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/七里香/七里香.lrc"},{"name":"花海","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/花海/花海.lrc"},{"name":"反方向的钟","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/反方向的钟/反方向的钟.lrc"},{"name":"兰亭序","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/兰亭序/兰亭序.lrc"},{"name":"说好的辛福呢","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的辛福呢.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002Neh8l0uciQZ_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/说好的辛福呢/说好的幸福呢.lrc"},{"name":"等你下课 (with 杨瑞代)","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003bSL0v4bpKAx_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.1/周杰伦/等你下课/等你下课.lrc"},{"name":"我落泪情绪零碎","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000bviBl4FjTpO_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/我落泪情绪零碎/我落泪情绪零碎.lrc"},{"name":"听妈妈的话","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.2/听妈妈的话/听妈妈的话.lrc"},{"name":"明明就","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003Ow85E3pnoqi_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/明明就/明明就.lrc"},{"name":"我是如此相信","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000001hGx1Z0so1YX_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music-jay@1.0.1/我是如此相信/我是如此相信.lrc"},{"name":"发如雪","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M0000024bjiL2aocxT_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/发如雪/发如雪.lrc"},{"name":"以父之名","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000MkMni19ClKG_3.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/以父之名/以父之名.lrc"},{"name":"园游会","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.flac","cover":"https://y.qq.com/music/photo_new/T002R300x300M000003DFRzD192KKD_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.3/园游会/园游会.lrc"},{"name":"本草纲目","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000002jLGWe16Tf1H_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/本草纲目/本草纲目.lrc"},{"name":"龙卷风","artist":"周杰伦","url":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.mp3","cover":"https://y.qq.com/music/photo_new/T002R300x300M000000f01724fd7TH_1.jpg?max_age=2592000","lrc":"https://npm.elemecdn.com/anzhiyu-music@1.0.4/龙卷风/龙卷风.lrc"}]]]></content>
       
     </entry>
     
