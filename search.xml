@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>国家标准全文公开系统GB/T下载PDF</title>
+      <link href="/posts/7c62e317.html"/>
+      <url>/posts/7c62e317.html</url>
+      
+        <content type="html"><![CDATA[<p>##起因 想下载<br>信息安全技术 网络安全等级保护基本要求<br>Information security technology — Baseline for classified protection of cybersecurity<br>GB&#x2F;T 22239-2019<br><a href="https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=BAFB47E8874764186BDB7865E8344DAF">https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=BAFB47E8874764186BDB7865E8344DAF</a><br>只能预览<br>想下载 搜了一圈找到如下<br><a href="https://github.com/lzghzr/TampermonkeyJS/issues/27">https://github.com/lzghzr/TampermonkeyJS/issues/27</a></p><p>大佬早就写过插件 但是呢 已经被和谐了 用不了了</p><p>评论区有高人 找到开源项目</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/chengdong0421/GB_tampermonkey</span><br></pre></td></tr></table></figure><p>使用步骤<br>1.首先浏览器安装油猴插件</p><p>安装地址<br><a href="https://www.tampermonkey.net/">https://www.tampermonkey.net/</a><br>2.安装插件</p><p>点我安装<br>图片.png<br><img src="/images/gb-t-download-pdf/1.%E7%82%B9%E5%87%BB%E9%A2%84%E8%A7%88.png" alt="图片.png"><br>先点 获取页面 再点 下载 pdf即可</p><p>图片.png<br><img src="/images/gb-t-download-pdf/2.%E4%B8%8B%E8%BD%BDPDF.png" alt="图片.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂谈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 国家标准 </tag>
+            
+            <tag> GBT </tag>
+            
+            <tag> PDF </tag>
+            
+            <tag> 下载 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo建站历程 github发布</title>
       <link href="/posts/adc9b3fe.html"/>
       <url>/posts/adc9b3fe.html</url>
@@ -47,9 +78,9 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories.html"/>
-      <url>/categories.html</url>
+      <title>文章归档</title>
+      <link href="/archive.html"/>
+      <url>/archive.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -58,9 +89,9 @@
     
     
     <entry>
-      <title>文章归档</title>
-      <link href="/archive.html"/>
-      <url>/archive.html</url>
+      <title>分类</title>
+      <link href="/categories.html"/>
+      <url>/categories.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -91,9 +122,9 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>相册集</title>
+      <link href="/album/index.html"/>
+      <url>/album/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -102,9 +133,9 @@
     
     
     <entry>
-      <title>相册集</title>
-      <link href="/album/index.html"/>
-      <url>/album/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -146,6 +177,17 @@
     
     
     <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/json/music.json"/>
       <url>/json/music.json</url>
@@ -160,17 +202,6 @@
       <title>音乐馆</title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
