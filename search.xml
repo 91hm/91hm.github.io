@@ -8,7 +8,7 @@
       <link href="/posts/8f1686ee.html"/>
       <url>/posts/8f1686ee.html</url>
       
-        <content type="html"><![CDATA[<p>项目背景，在做项目时使用了一套别人的Spring boot三方开源系统当基础框架，然后在此系统基础上增加子模块，书写新的controller接口和业务逻辑。项目结构如下图：<br><img src="/images/springboot-maven-404/1project.png" alt="project"><br>system是@SpringBootApplication标注类所在的主工程模块，statistics是我建立的子模块，我在该子模块下建立了controller接口，也进行了注解，但是启动后访问该接口，提示404错误找不到该接口。</p><p>经过排查解决过程如下：<br>1、@SpringBootApplication标注类一定要增加@ComponentScan标注，标识主模块包名+子模块包名</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org/jeecg/JeecgSystemApplication.java</span><br><span class="line">@ComponentScan(&#123;&quot;org.jeecg.*&quot;,&quot;com.huani.*&quot;&#125;)</span><br></pre></td></tr></table></figure><p>2、务必在主模块pom.xml中依赖子模块，网上很多教程根本没说这一步，只说使用@ComponentScan标注，只使用@ComponentScan标注，亲测无效！<br><img src="/images/springboot-maven-404/2maven1.png" alt="maven"><br>3、@ComponentScan标注了，主模块pom.xml把子模块也导入后，务必刷新maven依赖，否则还是不会生效，不要以为直接run就可以了，我就是被这里坑了一下午，点击Reload project<br><img src="/images/springboot-maven-404/3reload.png" alt="reload"><br>4、mybatis 记得修改</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org/jeecg/config/mybatis/MybatisPlusSaasConfig.java</span><br><span class="line">@MapperScan(value=&#123;&quot;org.jeecg.modules.**.mapper*&quot;,&quot;com.huani.**.mapper*&quot;&#125;)</span><br></pre></td></tr></table></figure><p>5、这时可以运行了，各位可以看到，刷新请求不在是404了 打完收工!</p>]]></content>
+        <content type="html"><![CDATA[<p>项目背景，在做项目时使用了一套别人的Spring boot三方开源系统当基础框架，然后在此系统基础上增加子模块，书写新的controller接口和业务逻辑。项目结构如下图：<br><img src="/images/springboot-maven-404/1project.png" alt="project"><br>system是@SpringBootApplication标注类所在的主工程模块，statistics是我建立的子模块，我在该子模块下建立了controller接口，也进行了注解，但是启动后访问该接口，提示404错误找不到该接口。</p><h1 id="经过排查解决过程如下："><a href="#经过排查解决过程如下：" class="headerlink" title="经过排查解决过程如下："></a>经过排查解决过程如下：</h1><h2 id="1、-SpringBootApplication标注类一定要增加-ComponentScan标注，标识主模块包名-子模块包名"><a href="#1、-SpringBootApplication标注类一定要增加-ComponentScan标注，标识主模块包名-子模块包名" class="headerlink" title="1、@SpringBootApplication标注类一定要增加@ComponentScan标注，标识主模块包名+子模块包名"></a>1、@SpringBootApplication标注类一定要增加@ComponentScan标注，标识主模块包名+子模块包名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org/jeecg/JeecgSystemApplication.java</span><br><span class="line">@ComponentScan(&#123;&quot;org.jeecg.*&quot;,&quot;com.huani.*&quot;&#125;)</span><br></pre></td></tr></table></figure><h2 id="2、务必在主模块pom-xml中依赖子模块，网上很多教程根本没说这一步，只说使用-ComponentScan标注，只使用-ComponentScan标注，亲测无效！"><a href="#2、务必在主模块pom-xml中依赖子模块，网上很多教程根本没说这一步，只说使用-ComponentScan标注，只使用-ComponentScan标注，亲测无效！" class="headerlink" title="2、务必在主模块pom.xml中依赖子模块，网上很多教程根本没说这一步，只说使用@ComponentScan标注，只使用@ComponentScan标注，亲测无效！"></a>2、务必在主模块pom.xml中依赖子模块，网上很多教程根本没说这一步，只说使用@ComponentScan标注，只使用@ComponentScan标注，亲测无效！</h2><p><img src="/images/springboot-maven-404/2maven1.png" alt="maven"></p><h2 id="3、-ComponentScan标注了，主模块pom-xml把子模块也导入后，务必刷新maven依赖，否则还是不会生效，不要以为直接run就可以了，我就是被这里坑了一下午，点击Reload-project"><a href="#3、-ComponentScan标注了，主模块pom-xml把子模块也导入后，务必刷新maven依赖，否则还是不会生效，不要以为直接run就可以了，我就是被这里坑了一下午，点击Reload-project" class="headerlink" title="3、@ComponentScan标注了，主模块pom.xml把子模块也导入后，务必刷新maven依赖，否则还是不会生效，不要以为直接run就可以了，我就是被这里坑了一下午，点击Reload project"></a>3、@ComponentScan标注了，主模块pom.xml把子模块也导入后，务必刷新maven依赖，否则还是不会生效，不要以为直接run就可以了，我就是被这里坑了一下午，点击Reload project</h2><p><img src="/images/springboot-maven-404/3reload.png" alt="reload"></p><h2 id="4、mybatis-记得修改-MapperScan"><a href="#4、mybatis-记得修改-MapperScan" class="headerlink" title="4、mybatis 记得修改 @MapperScan"></a>4、mybatis 记得修改 @MapperScan</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org/jeecg/config/mybatis/MybatisPlusSaasConfig.java</span><br><span class="line">@MapperScan(value=&#123;&quot;org.jeecg.modules.**.mapper*&quot;,&quot;com.huani.**.mapper*&quot;&#125;)</span><br></pre></td></tr></table></figure><h2 id="5、这时可以运行了，各位可以看到，刷新请求不在是404了-打完收工"><a href="#5、这时可以运行了，各位可以看到，刷新请求不在是404了-打完收工" class="headerlink" title="5、这时可以运行了，各位可以看到，刷新请求不在是404了 打完收工!"></a>5、这时可以运行了，各位可以看到，刷新请求不在是404了 打完收工!</h2><p><img src="/images/springboot-maven-404/4zhengchang.png" alt="zhengchang"></p>]]></content>
       
       
       <categories>
@@ -39,7 +39,7 @@
     
     
     <entry>
-      <title>hexo 博客添加音乐</title>
+      <title>hexo 博客添加网易音乐 meting api</title>
       <link href="/posts/cd52224a.html"/>
       <url>/posts/cd52224a.html</url>
       
@@ -50,6 +50,8 @@
           
           <category> 音乐 </category>
           
+          <category> meting </category>
+          
       </categories>
       
       
@@ -58,6 +60,8 @@
             <tag> music </tag>
             
             <tag> 音乐添加 </tag>
+            
+            <tag> meting </tag>
             
         </tags>
       
@@ -70,7 +74,7 @@
       <link href="/posts/adc9b3fe.html"/>
       <url>/posts/adc9b3fe.html</url>
       
-        <content type="html"><![CDATA[<p>很早就了解到hexo 创建静态网站 博客 等工具了  最近在某游戏论坛被封30天  还警告要封我号  吓得我自己创建个网站</p><p>说一下步骤吧<br>1.创建hexo</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://hexo.io/zh-cn/docs/</span><br></pre></td></tr></table></figure><p>2.设置主题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docs.anheyu.com/initall.html</span><br></pre></td></tr></table></figure><p>3.git发布</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: you git url </span><br><span class="line">  branch: master</span><br><span class="line">  message:  建站历程</span><br></pre></td></tr></table></figure><p>4添加亿点点细节<br>配置 音乐墙、关于我、分类、相册集、留言板 框架自带用valine 注册设置一番即可<br>照文档操作基本就能创建很好的站点了</p><h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://fontawesome.com/icons?from=io</span><br><span class="line">使用 fa-brands fa-youtube</span><br></pre></td></tr></table></figure><p>5 添加音乐<br><a href="https://91hm.github.io/posts/cd52224a.html">https://91hm.github.io/posts/cd52224a.html</a></p><p>想法 到成功实现 大概花了2天时间</p>]]></content>
+        <content type="html"><![CDATA[<p>很早就了解到hexo 创建静态网站 博客 等工具了  最近在某游戏论坛被封30天  还警告要封我号  吓得我自己创建个网站</p><h1 id="说一下步骤吧"><a href="#说一下步骤吧" class="headerlink" title="说一下步骤吧"></a>说一下步骤吧</h1><h2 id="1-创建hexo"><a href="#1-创建hexo" class="headerlink" title="1.创建hexo"></a>1.创建hexo</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://hexo.io/zh-cn/docs/</span><br></pre></td></tr></table></figure><h2 id="2-设置主题"><a href="#2-设置主题" class="headerlink" title="2.设置主题"></a>2.设置主题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docs.anheyu.com/initall.html</span><br></pre></td></tr></table></figure><h2 id="3-git发布"><a href="#3-git发布" class="headerlink" title="3.git发布"></a>3.git发布</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: you git url </span><br><span class="line">  branch: master</span><br><span class="line">  message:  建站历程</span><br></pre></td></tr></table></figure><h2 id="4添加亿点点细节"><a href="#4添加亿点点细节" class="headerlink" title="4添加亿点点细节"></a>4添加亿点点细节</h2><p>配置 音乐墙、关于我、分类、相册集、留言板 框架自带用valine 注册设置一番即可<br>照文档操作基本就能创建很好的站点了</p><h3 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://fontawesome.com/icons?from=io</span><br><span class="line">使用 fa-brands fa-youtube</span><br></pre></td></tr></table></figure><h2 id="5-添加音乐"><a href="#5-添加音乐" class="headerlink" title="5 添加音乐"></a>5 添加音乐</h2><p><a href="https://91hm.github.io/posts/cd52224a.html">https://91hm.github.io/posts/cd52224a.html</a></p><p>想法 到成功实现 大概花了2天时间</p>]]></content>
       
       
       <categories>
@@ -140,6 +144,17 @@
     
     
     <entry>
+      <title>给我赞助</title>
+      <link href="/sponsor.html"/>
+      <url>/sponsor.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我的朋友</title>
       <link href="/friends.html"/>
       <url>/friends.html</url>
@@ -165,28 +180,6 @@
       <title>关于</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>给我赞助</title>
-      <link href="/sponsor.html"/>
-      <url>/sponsor.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>即刻短文</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -228,17 +221,6 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>fcircle</title>
       <link href="/fcircle/index.html"/>
       <url>/fcircle/index.html</url>
@@ -250,9 +232,9 @@
     
     
     <entry>
-      <title>音乐馆</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>即刻短文</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -283,9 +265,31 @@
     
     
     <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>世界各地风景</title>
       <link href="/wordScenery/index.html"/>
       <url>/wordScenery/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>音乐馆</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
