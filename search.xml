@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>添加音乐</title>
+      <link href="/posts/cd52224a.html"/>
+      <url>/posts/cd52224a.html</url>
+      
+        <content type="html"><![CDATA[<p>不少小伙伴发现最近安知鱼主题的音乐胶囊配置无效或者音乐馆没有界面出来，原因其实是因为官方的meting api因为某种原因挂掉了。<br>既然知道了问题所在，就很好解决了，安知鱼主题的配置文件CDN选项自带有meting_api配置，我们可以自己搭建meting api以提高访问性和稳定性，或者使用其他人提供出来的免费API，只不过稳定性可能会没有那么高。<br>自建API</p><p>项目地址meting-api</p><p>部署方式此处提供宝塔部署方法，新建一个站点，然后将项目代码下载下来，上传到站点目录并解压</p><p>然后在当前目录执行命令安装依赖</p><p>composer install</p><p>在根目录会有index.php，可以在这里调整参数设置API路径缓存及时间等等，详细见原项目README.md，博主全默认配置，注意配置完后可能会存在跨域的情况，可以修改index.php前面加上允许跨站的两行代码，修复这个情况，虽然本来就有这个，但是不知道为什么写在后面就会跨域，写在前面就不会再有这种情况了。<br>如果你是安知鱼主题，你只需要在主题配置文件的最下方修改CDN.option.meting_api</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meting_api: https://meting.qjqq.cn/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r</span><br><span class="line">#列如我的</span><br><span class="line">meting_api: https://api.injahow.cn/meting/?type=playlist&amp;id=102783891&amp;servernetease</span><br></pre></td></tr></table></figure><p>进阶</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">参数说明</span><br><span class="line">server: 数据源</span><br><span class="line">     netease 网易云音乐(默认)</span><br><span class="line">     tencent QQ音乐</span><br><span class="line"></span><br><span class="line">type: 类型</span><br><span class="line">     name 歌曲名</span><br><span class="line">     artist 歌手</span><br><span class="line">     url 链接</span><br><span class="line">     pic 封面</span><br><span class="line">     lrc 歌词</span><br><span class="line">     song 单曲</span><br><span class="line">     playlist 歌单</span><br><span class="line"></span><br><span class="line">id: 类型ID（封面ID/单曲ID/歌单ID）</span><br><span class="line"></span><br><span class="line">GitHub：meting-api，此API基于 Meting 构建。</span><br></pre></td></tr></table></figure><p>自建API以后会发现提供的cover图非常小只有120<em>120，导致在音乐馆页面的封面图很模糊，可以通过修改src&#x2F;Meting.php的824行左右代码，将所有调用pic方法的$size都变成300</em>300</p><p>弊端就是图片会变大一点点，各有取舍。<br>开放API</p><p>在官方的meting api挂掉以后涌现了一大批优秀的公益api</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://api.injahow.cn/meting/</span><br><span class="line">https://meting.qjqq.cn/</span><br><span class="line">https://meting.qjqq.cn/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r</span><br><span class="line">https://api.injahow.cn/meting/?server=:server&amp;type=:type&amp;id=:id&amp;auth=:auth&amp;r=:r</span><br></pre></td></tr></table></figure><p>在安知鱼主题中只需在CDN.option.meting_api 填入下面中的任何一个即可</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> music </tag>
+            
+            <tag> 音乐添加 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo建站历程 github发布</title>
       <link href="/posts/adc9b3fe.html"/>
       <url>/posts/adc9b3fe.html</url>
@@ -78,22 +99,22 @@
     
     
     <entry>
-      <title>我的朋友</title>
-      <link href="/friends.html"/>
-      <url>/friends.html</url>
+      <title>文章归档</title>
+      <link href="/archive.html"/>
+      <url>/archive.html</url>
       
-        <content type="html"><![CDATA[<h2 id="我的朋友"><a href="#我的朋友" class="headerlink" title="我的朋友"></a>我的朋友</h2><p>朋友们</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>文章归档</title>
-      <link href="/archive.html"/>
-      <url>/archive.html</url>
+      <title>我的朋友</title>
+      <link href="/friends.html"/>
+      <url>/friends.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="我的朋友"><a href="#我的朋友" class="headerlink" title="我的朋友"></a>我的朋友</h2><p>朋友们</p>]]></content>
       
     </entry>
     
@@ -122,17 +143,6 @@
     
     
     <entry>
-      <title>相册集</title>
-      <link href="/album/index.html"/>
-      <url>/album/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -144,9 +154,9 @@
     
     
     <entry>
-      <title>日常生活</title>
-      <link href="/dailyPhoto/index.html"/>
-      <url>/dailyPhoto/index.html</url>
+      <title>相册集</title>
+      <link href="/album/index.html"/>
+      <url>/album/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -166,9 +176,31 @@
     
     
     <entry>
+      <title>日常生活</title>
+      <link href="/dailyPhoto/index.html"/>
+      <url>/dailyPhoto/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>fcircle</title>
       <link href="/fcircle/index.html"/>
       <url>/fcircle/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -191,17 +223,6 @@
       <title>音乐馆</title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
