@@ -78,11 +78,11 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories.html"/>
-      <url>/categories.html</url>
+      <title>我的朋友</title>
+      <link href="/friends.html"/>
+      <url>/friends.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="我的朋友"><a href="#我的朋友" class="headerlink" title="我的朋友"></a>我的朋友</h2><p>朋友们</p>]]></content>
       
     </entry>
     
@@ -94,17 +94,6 @@
       <url>/archive.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>我的朋友</title>
-      <link href="/friends.html"/>
-      <url>/friends.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="我的朋友"><a href="#我的朋友" class="headerlink" title="我的朋友"></a>我的朋友</h2><p>朋友们</p>]]></content>
       
     </entry>
     
@@ -144,9 +133,9 @@
     
     
     <entry>
-      <title>日常生活</title>
-      <link href="/dailyPhoto/index.html"/>
-      <url>/dailyPhoto/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -155,9 +144,9 @@
     
     
     <entry>
-      <title>fcircle</title>
-      <link href="/fcircle/index.html"/>
-      <url>/fcircle/index.html</url>
+      <title>日常生活</title>
+      <link href="/dailyPhoto/index.html"/>
+      <url>/dailyPhoto/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -177,6 +166,17 @@
     
     
     <entry>
+      <title>fcircle</title>
+      <link href="/fcircle/index.html"/>
+      <url>/fcircle/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/json/music.json"/>
       <url>/json/music.json</url>
@@ -188,9 +188,9 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>音乐馆</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -199,9 +199,9 @@
     
     
     <entry>
-      <title>音乐馆</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
