@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>git回退到指定版本的两种方式：reset、revert</title>
+      <link href="/posts/49a026b8.html"/>
+      <url>/posts/49a026b8.html</url>
+      
+        <content type="html"><![CDATA[<p>在我们使用git管理代码过程中，有时会遇到代码错误提交的情况，需要回退到之前节点的某个版本。</p><p>两种回退方式：revert， 回退到之前的某个版本用reset;<br>1.三棵树工作区</p><p>理解 reset 和 checkout 的最简方法，就是以 Git 的思维框架（将其作为内容管理器）来管理三棵不同的树。 “树” 在我们这里的实际意思是 “文件的集合”，而不是指特定的数据结构。 （在某些情况下索引看起来并不像一棵树，不过我们现在的目的是用简单的方式思考它。）</p><p>Git 作为一个系统，是以它的一般操作来管理并操纵这三棵树的：<br>树用途</p><p>HEAD</p><p>上一次提交的快照，下一次提交的父结点</p><p>Index</p><p>预期的下一次提交的快照</p><p>Working Directory</p><p>沙盒</p><p>HEAD</p><p>HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 该分支上的最后一次提交 的快照。</p><p>其实，查看快照的样子很容易。 下例就显示了 HEAD 快照实际的目录列表，以及其中每个文件的 SHA-1 校验和：<br><code>git cat-file -p HEAD</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$  git cat-file -p HEAD</span><br><span class="line">tree 7307a09b3133fc28722faa0611ec8e679082560c</span><br><span class="line">parent c15d2fdfa6900db63b847390b8f524cedd52d353</span><br><span class="line">author haiming &lt;brave.yhm@gmail.com&gt; 1704732740 +0800</span><br><span class="line">committer haiming &lt;brave.yhm@gmail.com&gt; 1704732740 +0800</span><br><span class="line">update:细节调整</span><br></pre></td></tr></table></figure><p><code>git ls-tree -r HEAD</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$git ls-tree -r HEAD</span><br><span class="line">100644 blob 34317f337e89d14062fcd05988e417255c05434d    .gitignore</span><br><span class="line">100644 blob 24e8c7df85b004a198dec213d0c49ae9c5b8a7b0    README.md</span><br><span class="line">100644 blob 9f940974b6fb56251f4dd7a8e6fa95dcc02c8426    _config.anzhiyu.yml</span><br><span class="line">100644 blob 466437de259f6b22bddd5d272aca49f365645275    _config.yml</span><br><span class="line">100644 blob 4fa50c3b13d4317538890a8721c3a86ee0fc5107    package-lock.json</span><br><span class="line">100644 blob 972b2f1a6c30b303c9b2458d671a7a87451feddd    package.json</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>Git 的 cat-file 和 ls-tree 是底层命令，它们一般用于底层工作，在日常工作中并不使用。 不过它们能帮助我们了解到底发生了什么。<br>索引<br>索引是你的 预期的下一次提交。 我们也会将这个概念引用为 Git 的“暂存区”，这就是当你运行 git commit 时 Git 看起来的样子。<br>Git 将上一次检出到工作目录中的所有文件填充到索引区，它们看起来就像最初被检出时的样子。 之后你会将其中一些文件替换为新版本，接着通过 git commit 将它们转换为树来用作新的提交。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git ls-files -s      </span><br><span class="line">100644 34317f337e89d14062fcd05988e417255c05434d 0       .gitignore</span><br><span class="line">100644 3f6db9f763c71c046ce7ee8ab81eecc9284c990e 0       README.md</span><br><span class="line">100644 bb2617e85aeccc66d6f812611ac286c111d38daf 0       _config.anzhiyu.yml</span><br><span class="line">100644 7b4885ada19a3cf5e31c9a41b8a2d5bfd0cec296 0       _config.yml</span><br><span class="line">100644 4fa50c3b13d4317538890a8721c3a86ee0fc5107 0       package-lock.json</span><br><span class="line">100644 972b2f1a6c30b303c9b2458d671a7a87451feddd 0       package.json</span><br></pre></td></tr></table></figure><p>再说一次，我们在这里又用到了 git ls-files 这个幕后的命令，它会显示出索引当前的样子。</p><p>确切来说，索引在技术上并非树结构，它其实是以扁平的清单实现的。不过对我们而言，把它当做树就够了。</p><p>工作目录</p><p>最后，你就有了自己的 工作目录（通常也叫 工作区）。 另外两棵树以一种高效但并不直观的方式，将它们的内容存储在 .git 文件夹中。 工作目录会将它们解包为实际的文件以便编辑。 你可以把工作目录当做 沙盒。在你将修改提交到暂存区并记录到历史之前，可以随意更改。</p><pre><code>$ tree.├── README├── Rakefile└── lib    └── simplegit.rb 1 directory, 3 files</code></pre><p>2.工作流程</p><p>经典的 Git 工作流程是通过操纵这三个区域来以更加连续的状态记录项目快照的。</p><p><img src="/images/git-reset-revert/git_images.png" alt="git_images"></p><ol start="3"><li><p>git revert</p></li><li><p>查看版本号：<br>可以通过命令行查看（输入git log）：</p></li></ol><p>2.使用“git revert -n 版本号”反做，并使用“git commit -m 版本名”提交：<br>（1）反做，使用“git revert -n 版本号”命令。如下命令，我们反做版本号为8b89621的版本：</p><p>git revert -n 3f6db9f763c71c046ce7ee8ab81eecc9284c990e</p><pre><code>注意： 这里可能会出现冲突，那么需要手动修改冲突的文件。而且要git add 文件名。</code></pre><p>（2）提交，使用“git commit -m 版本名”，如：</p><p>git commit -m “revert add text.txt”</p><pre><code>此时可以用“git log”查看本地的版本信息，可见多生成了一个新的版本</code></pre><p>3.使用“git push”推上远程库：</p><p>git push</p><ol start="4"><li>git reset</li></ol><p>原理： git reset的作用是修改HEAD的位置，即将HEAD指向的位置改变为之前存在的某个版本;</p><p>reset 命令会以特定的顺序重写这三棵树，在你指定以下选项时停止：</p><pre><code>移动 HEAD 分支的指向 （若指定了 --soft，则到此停止）使索引看起来像 HEAD （若未指定 --hard，则到此停止）使工作目录看起来像索引</code></pre><p>操作过程：</p><p>git log  查看提交记录的版本号；</p><p>git reset –hard 版本号 ：回退到指定版本， git reset –hard 0afbc228ff7e5568303e6f9a52b7146973a3e672</p><p>git push -f    将回退的后版本强推到远程主机。此时如果用“git push”会报错，因为我们本地库HEAD指向的版本比远程库的要旧：</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring boot 子模块不同包名下controller接口404问题解决方案</title>
       <link href="/posts/8f1686ee.html"/>
       <url>/posts/8f1686ee.html</url>
@@ -97,6 +122,37 @@
     
     
     <entry>
+      <title>IDEA安装Vim插件并配置共享VIM和Windows的剪切板</title>
+      <link href="/posts/6d3a0a06.html"/>
+      <url>/posts/6d3a0a06.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>idea里面插件搜索安装一下插件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IdeaVim</span><br><span class="line">IdeaVimExtension</span><br><span class="line">IdeaVim-esyMotion</span><br><span class="line">IdeaVim-sneak</span><br><span class="line">which-key</span><br></pre></td></tr></table></figure><h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><p>space + wo 最大化窗口 或者切换回窗口<br>alt + 1 打开文件树窗口<br>alt + ←   打开编辑中左侧窗口<br>alt + →   打开编辑中又侧窗口</p><h2 id="我的配置如下"><a href="#我的配置如下" class="headerlink" title="我的配置如下"></a>我的配置如下</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br></pre></td><td class="code"><pre><span class="line">&quot; ================================================================================================</span><br><span class="line">&quot; = Extensions =====================================</span><br><span class="line">&quot; ================================================================================================</span><br><span class="line">Plug &#x27;tpope/vim-surround&#x27;</span><br><span class="line">Plug &#x27;preservim/nerdtree&#x27;</span><br><span class="line">Plug &#x27;&lt;extension-github-reference&gt;&#x27;</span><br><span class="line"></span><br><span class="line">&quot; ================================================================================================</span><br><span class="line">&quot; = Basic settings =====================================</span><br><span class="line">&quot; ================================================================================================</span><br><span class="line">syntax on  &quot;语法高亮</span><br><span class="line">set clipboard+=unnamed &quot;共享剪切板</span><br><span class="line">set ignorecase &quot;忽略大小写</span><br><span class="line">set scrolloff=30</span><br><span class="line">set history=200</span><br><span class="line"></span><br><span class="line">set number  &quot;显示行号(由于Idea中有行号显示，则vim中的显示行号就不配置了)</span><br><span class="line">set relativenumber</span><br><span class="line"></span><br><span class="line">set incsearch</span><br><span class="line">set hlsearch</span><br><span class="line">set keep-english-in-normal</span><br><span class="line"></span><br><span class="line">&quot; set number relativenumber &quot;显示行号(由于Idea中有行号显示，则vim中的显示行号就不配置了)</span><br><span class="line">set ruler  &quot;显示光标所在位置的行号和列号</span><br><span class="line">set wrap   &quot;自动折行</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set tabstop=4&quot; 设置tab键和自动缩进</span><br><span class="line">set softtabstop=4</span><br><span class="line">set expandtab     &quot;将tab替换为相应数量空格</span><br><span class="line">set smartindent</span><br><span class="line">set backspace=2</span><br><span class="line">set co=5 &quot; 屏幕滚动时在光标上下方保留5行预览代码</span><br><span class="line">set nobackup &quot;设置取消备份 禁止临时文件生成</span><br><span class="line">set noswapfile</span><br><span class="line">set keep-english-in-normal &quot; 为IdeaVim插件增加自动切换为英文输入法的功能,idea 需要安装 IdeaVimExtension plugin</span><br><span class="line">set showmatch &quot;设置匹配模式 类似当输入一个左括号时会匹配相应的那个右括号</span><br><span class="line">set clipboard^=unnamed,unnamedplus</span><br><span class="line">&quot;set laststatus=2   &quot;命令行为两行</span><br><span class="line">set fenc=utf-8     &quot;文件编码</span><br><span class="line">&quot;set mouse=a        &quot;启用鼠标</span><br><span class="line">set cursorline     &quot;突出显示当前行</span><br><span class="line">&quot;set cursorcolumn   &quot;突出显示当前列</span><br><span class="line">set fdm=marker</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; ================================================================================================</span><br><span class="line">&quot; = No Leader Keymaps =====================================</span><br><span class="line">&quot; ================================================================================================</span><br><span class="line">nmap ge &lt;action&gt;(GotoNextError)</span><br><span class="line">nmap gt &lt;action&gt;(GotoTest)</span><br><span class="line">nmap gm &lt;action&gt;(MethodUp)</span><br><span class="line">&quot; last changed in current buffer(file)</span><br><span class="line">nmap ga &#x27;.</span><br><span class="line"></span><br><span class="line">&quot; paste之后不会把yank的内容替换掉</span><br><span class="line">vmap p &quot;_dp</span><br><span class="line"></span><br><span class="line">&quot; bookmark in whole program</span><br><span class="line">&quot; nmap ma mA</span><br><span class="line">&quot; nmap &#x27;a &#x27;A</span><br><span class="line">&quot; nmap ms mS</span><br><span class="line">&quot; nmap &#x27;s &#x27;S</span><br><span class="line">&quot; nmap md mD</span><br><span class="line">&quot; nmap &#x27;d &#x27;D</span><br><span class="line">&quot; nmap mf mF</span><br><span class="line">&quot; nmap &#x27;f &#x27;F</span><br><span class="line"></span><br><span class="line">&quot; ================================================================================================</span><br><span class="line">&quot; = Leader Keymaps =====================================</span><br><span class="line">&quot; ================================================================================================</span><br><span class="line">&quot; leaderkey</span><br><span class="line">let mapleader=&quot; &quot;</span><br><span class="line"></span><br><span class="line">&quot; ================================================================================================</span><br><span class="line">&quot; 👻👻👻 Which-Key 👻👻👻</span><br><span class="line">&quot; ================================================================================================</span><br><span class="line">set which-key</span><br><span class="line">set notimeout</span><br><span class="line"></span><br><span class="line">&quot; f: Find/Format ⭐️</span><br><span class="line">let g:WhichKeyDesc_FindOrFormat = &quot;&lt;leader&gt;f FindOrFormat&quot;</span><br><span class="line">let g:WhichKeyDesc_FindOrFormat_FindFile = &quot;&lt;leader&gt;ff FindFile&quot;</span><br><span class="line">nmap &lt;leader&gt;ff &lt;action&gt;(GotoFile)</span><br><span class="line"></span><br><span class="line">let g:WhichKeyDesc_FindOrFormat_FindFileLocation = &quot;&lt;leader&gt;fe FindFileLocation&quot;</span><br><span class="line">nmap &lt;leader&gt;fe &lt;action&gt;(SelectInProjectView)</span><br><span class="line"></span><br><span class="line">let g:WhichKeyDesc_FindOrFormat_FindText = &quot;&lt;leader&gt;ft FindText&quot;</span><br><span class="line">nmap &lt;leader&gt;ft &lt;action&gt;(FindInPath)</span><br><span class="line"></span><br><span class="line">let g:WhichKeyDesc_FindOrFormat_Commands = &quot;&lt;leader&gt;fc Commands&quot;</span><br><span class="line">nmap &lt;leader&gt;fc &lt;action&gt;(GotoAction)</span><br><span class="line"></span><br><span class="line">let g:WhichKeyDesc_FindOrFormat_OpenedProject = &quot;&lt;leader&gt;fp OpenedProject&quot;</span><br><span class="line">nmap &lt;leader&gt;fp &lt;action&gt;(OpenProjectWindows)</span><br><span class="line"></span><br><span class="line">let g:WhichKeyDesc_FindOrFormat_Format = &quot;&lt;leader&gt;fm Format&quot;</span><br><span class="line">nmap &lt;leader&gt;fm &lt;action&gt;(ReformatCode) \| &lt;action&gt;(OptimizeImports)</span><br><span class="line"></span><br><span class="line">&quot; g: Git ⭐️</span><br><span class="line">let g:WhichKeyDesc_Git = &quot;&lt;leader&gt;g Git&quot;</span><br><span class="line">let g:WhichKeyDesc_Git_RollbackHunk = &quot;&lt;leader&gt;gr RollbackHunk&quot;</span><br><span class="line">nmap &lt;leader&gt;gr :action Vcs.RollbackChangedLines&lt;CR&gt;</span><br><span class="line">let g:WhichKeyDesc_Git_Add = &quot;&lt;leader&gt;ga Git add&quot;</span><br><span class="line">nmap &lt;leader&gt;ga &lt;action&gt;(Git.Add)</span><br><span class="line">let g:WhichKeyDesc_Git_Commit = &quot;&lt;leader&gt;gc Git Commit&quot;</span><br><span class="line">nmap &lt;leader&gt;gc &lt;action&gt;(CheckinFiles)</span><br><span class="line"></span><br><span class="line">&quot; g: GotoMethods ⭐️</span><br><span class="line">let g:WhichKeyDesc_Goto = &quot;&lt;leader&gt;g GotoDeclaration&quot;</span><br><span class="line">let g:WhichKeyDesc_Goto_GotoDeclaration = &quot;&lt;leader&gt;gi GotoDeclaration&quot;</span><br><span class="line">nmap &lt;leader&gt;gi &lt;action&gt;(GotoDeclaration)</span><br><span class="line"></span><br><span class="line">&quot; i: Insert ⭐️</span><br><span class="line">let g:WhichKeyDesc_InsertAfterBrackets = &quot;&lt;leader&gt;i InsertAfterBrackets&quot;</span><br><span class="line">nmap &lt;leader&gt;i f(a</span><br><span class="line"></span><br><span class="line">&quot; j: add Semicolon and goto nextline⭐️</span><br><span class="line">let g:WhichKeyDesc_InsertSemicolon = &quot;&lt;leader&gt;j InsertSemicolon&quot;</span><br><span class="line">nmap &lt;leader&gt;j A;&lt;ESC&gt;o</span><br><span class="line"></span><br><span class="line">&quot; l: lsp: Language server protocol (align with neovim)⭐️</span><br><span class="line">let g:WhichKeyDesc_LSP = &quot;&lt;leader&gt;l LSP&quot;</span><br><span class="line">let g:WhichKeyDesc_LSP_Rename = &quot;&lt;leader&gt;lr Rename&quot;</span><br><span class="line">nmap &lt;leader&gt;lr &lt;action&gt;(RenameElement)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; n: No ⭐️</span><br><span class="line">let g:WhichKeyDesc_No_Highlight = &quot;&lt;leader&gt;nl NoHighlight&quot;</span><br><span class="line">nmap &lt;leader&gt;nl :nohlsearch&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; s: Show ⭐️</span><br><span class="line">let g:WhichKeyDesc_Show = &quot;&lt;leader&gt;s Show&quot;</span><br><span class="line">let g:WhichKeyDesc_Show_FileStructure = &quot;&lt;leader&gt;ss ShowFileStructure&quot;</span><br><span class="line">nmap &lt;leader&gt;ss &lt;action&gt;(FileStructurePopup)</span><br><span class="line">let g:WhichKeyDesc_Show_Bookmarks = &quot;&lt;leader&gt;sb ShowBookmarks&quot;</span><br><span class="line">nmap &lt;leader&gt;sb &lt;action&gt;(ShowBookmarks)</span><br><span class="line"></span><br><span class="line">&quot; r: Run/Re ⭐️</span><br><span class="line">let g:WhichKeyDesc_RunOrRe = &quot;&lt;leader&gt;r RunOrRe&quot;</span><br><span class="line">let g:WhichKeyDesc_RunOrRe_ReRun = &quot;&lt;leader&gt;rr ReRun&quot;</span><br><span class="line">nmap &lt;leader&gt;rr &lt;action&gt;(Rerun)</span><br><span class="line">let g:WhichKeyDesc_RunOrRe_ReRunTests = &quot;&lt;leader&gt;rt ReRunTests&quot;</span><br><span class="line">nmap &lt;leader&gt;rt &lt;action&gt;(RerunTests)</span><br><span class="line">let g:WhichKeyDesc_RunOrRe_Rename = &quot;&lt;leader&gt;rn Rename&quot;</span><br><span class="line">map &lt;leader&gt;rn &lt;action&gt;(RenameElement)</span><br><span class="line"></span><br><span class="line">&quot; w: Window ⭐️</span><br><span class="line">let g:WhichKeyDesc_Windows = &quot;&lt;leader&gt;w Windows&quot;</span><br><span class="line">let g:WhichKeyDesc_Windows_maximize = &quot;&lt;leader&gt;wo maximize&quot;</span><br><span class="line">nmap &lt;leader&gt;wo &lt;action&gt;(UnsplitAll) \| &lt;action&gt;(HideAllWindows)</span><br><span class="line">let g:WhichKeyDesc_Windows_splitWindowVertically = &quot;&lt;leader&gt;wl splitWindowVertically&quot;</span><br><span class="line">nmap &lt;leader&gt;wl &lt;action&gt;(Macro.SplitVertically)</span><br><span class="line">let g:WhichKeyDesc_Windows_closeActiveWindow = &quot;&lt;leader&gt;wc closeActiveWindow&quot;</span><br><span class="line">nmap &lt;leader&gt;wc &lt;c-w&gt;c</span><br><span class="line"></span><br><span class="line">&quot; z: zip(fold) ⭐️</span><br><span class="line">let g:WhichKeyDesc_Zip = &quot;&lt;leader&gt;z Zip&quot;</span><br><span class="line">let g:WhichKeyDesc_Zip_unZipAll = &quot;&lt;leader&gt;zo unZipAll&quot;</span><br><span class="line">nmap &lt;leader&gt;zo &lt;action&gt;(ExpandAllRegions)</span><br><span class="line">let g:WhichKeyDesc_Zip_ZipAll = &quot;&lt;leader&gt;zc ZipAll&quot;</span><br><span class="line">nmap &lt;leader&gt;zc &lt;action&gt;(CollapseAllRegions)</span><br><span class="line"></span><br><span class="line">&quot; c: Close ⭐️;</span><br><span class="line">let g:WhichKeyDesc_CloseBuffer = &quot;&lt;leader&gt;q CloseBuffer&quot;</span><br><span class="line">nmap &lt;leader&gt;q :q!&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; e: Toggle Explorer ⭐️</span><br><span class="line">let g:WhichKeyDesc_ToggleExplorerOrExtract = &quot;&lt;leader&gt;e ToggleExplorer&quot;</span><br><span class="line">nmap &lt;leader&gt;e &lt;action&gt;(ActivateProjectToolWindow)</span><br><span class="line">&quot; e: Extract</span><br><span class="line">&quot; extract method/function</span><br><span class="line">vmap &lt;leader&gt;em &lt;action&gt;(ExtractMethod)</span><br><span class="line">&quot; extract constant</span><br><span class="line">vmap &lt;leader&gt;ec &lt;action&gt;(IntroduceConstant)</span><br><span class="line">&quot; extract field</span><br><span class="line">vmap &lt;leader&gt;ef &lt;action&gt;(IntroduceField)</span><br><span class="line">&quot; extract variable</span><br><span class="line">vmap &lt;leader&gt;ev &lt;action&gt;(IntroduceVariable)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> idea </category>
+          
+          <category> vim </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> idea </tag>
+            
+            <tag> vim </tag>
+            
+            <tag> 剪切板共享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>国家标准全文公开系统GB/T下载PDF</title>
       <link href="/posts/7c62e317.html"/>
       <url>/posts/7c62e317.html</url>
@@ -131,22 +187,22 @@
     
     
     <entry>
-      <title>我的朋友</title>
-      <link href="/friends.html"/>
-      <url>/friends.html</url>
+      <title>文章归档</title>
+      <link href="/archive.html"/>
+      <url>/archive.html</url>
       
-        <content type="html"><![CDATA[<h2 id="我的朋友"><a href="#我的朋友" class="headerlink" title="我的朋友"></a>我的朋友</h2><p>朋友们</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>文章归档</title>
-      <link href="/archive.html"/>
-      <url>/archive.html</url>
+      <title>我的朋友</title>
+      <link href="/friends.html"/>
+      <url>/friends.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="我的朋友"><a href="#我的朋友" class="headerlink" title="我的朋友"></a>我的朋友</h2><p>朋友们</p>]]></content>
       
     </entry>
     
@@ -175,20 +231,9 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>即刻短文</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -208,6 +253,17 @@
     
     
     <entry>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>fcircle</title>
       <link href="/fcircle/index.html"/>
       <url>/fcircle/index.html</url>
@@ -219,9 +275,9 @@
     
     
     <entry>
-      <title>即刻短文</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -263,9 +319,9 @@
     
     
     <entry>
-      <title>音乐馆</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>世界各地风景</title>
+      <link href="/wordScenery/index.html"/>
+      <url>/wordScenery/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -274,9 +330,9 @@
     
     
     <entry>
-      <title>世界各地风景</title>
-      <link href="/wordScenery/index.html"/>
-      <url>/wordScenery/index.html</url>
+      <title>音乐馆</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
