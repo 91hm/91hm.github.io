@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>由于同一位置中存在不能定向的文件夹怎么解决?</title>
+      <link href="/posts/1a1b695f.html"/>
+      <url>/posts/1a1b695f.html</url>
+      
+        <content type="html"><![CDATA[<p>我想把win10 C盘用户里的文档这个文件夹移动到D盘一直显示这个怎么解决？<br>由于同一位置中存在不能定向的文件夹怎么解决?</p><p>原因是你之前在OneDrive中把 桌面 文档或图片设置成了自动同步</p><p>。</p><p>只要你在OneDrive中取消同步就好了</p><p>首先在桌面上右击<br><img src="/images/wind11-file-one-drive/one1.png" alt="one1"><br>点击管理onedrive备份<br><img src="/images/wind11-file-one-drive/one2.png" alt="one2"></p><p>三个部分下会有个取消备份，取消就好了。然后就恢复正常了</p><p>还有一个办法 卸载oneDrive 重启即可</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 由于同一位置中存在不能定向的文件夹怎么解决? </tag>
+            
+            <tag> one drive </tag>
+            
+            <tag> 移动文档失败 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git回退到指定版本的两种方式：reset、revert</title>
       <link href="/posts/49a026b8.html"/>
       <url>/posts/49a026b8.html</url>
@@ -200,33 +223,11 @@
     
     
     <entry>
-      <title>给我赞助</title>
-      <link href="/sponsor.html"/>
-      <url>/sponsor.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>我的朋友</title>
       <link href="/friends.html"/>
       <url>/friends.html</url>
       
         <content type="html"><![CDATA[<h2 id="我的朋友"><a href="#我的朋友" class="headerlink" title="我的朋友"></a>我的朋友</h2><p>朋友们</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -244,9 +245,31 @@
     
     
     <entry>
+      <title>给我赞助</title>
+      <link href="/sponsor.html"/>
+      <url>/sponsor.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
