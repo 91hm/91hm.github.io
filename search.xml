@@ -8,7 +8,7 @@
       <link href="/posts/1a1b695f.html"/>
       <url>/posts/1a1b695f.html</url>
       
-        <content type="html"><![CDATA[<p>我想把win10 C盘用户里的文档这个文件夹移动到D盘一直显示这个怎么解决？<br>由于同一位置中存在不能定向的文件夹怎么解决?<br><img src="/images/wind11-file-one-drive/move1.png" alt="1"><br><img src="/images/wind11-file-one-drive/move1.png" alt="2"></p><p>原因是你之前在OneDrive中把 桌面 文档或图片设置成了自动同步</p><p>只要你在OneDrive中取消同步就好了</p><p>首先在桌面上右击<br><img src="/images/wind11-file-one-drive/one1.png" alt="one1"><br>点击管理onedrive备份<br><img src="/images/wind11-file-one-drive/one2.png" alt="one2"></p><p>三个部分下会有个取消备份，取消就好了。然后就恢复正常了</p><p>还有一个办法 卸载oneDrive 重启即可</p>]]></content>
+        <content type="html"><![CDATA[<p>我想把win10 C盘用户里的文档这个文件夹移动到D盘一直显示这个怎么解决？<br>由于同一位置中存在不能定向的文件夹怎么解决?<br><img src="/images/wind11-file-one-drive/move1.png" alt="1"><br><img src="/images/wind11-file-one-drive/move2.png" alt="2"></p><p>原因是你之前在OneDrive中把 桌面 文档或图片设置成了自动同步</p><p>只要你在OneDrive中取消同步就好了</p><p>首先在桌面上右击<br><img src="/images/wind11-file-one-drive/one1.png" alt="one1"><br>点击管理onedrive备份<br><img src="/images/wind11-file-one-drive/one2.png" alt="one2"></p><p>三个部分下会有个取消备份，取消就好了。然后就恢复正常了</p><p>千万不要随便卸载oneDrive  卸载了还是不能移动位置 非常恶心 还得重新装回来</p>]]></content>
       
       
       
@@ -212,17 +212,6 @@
     
     
     <entry>
-      <title>文章归档</title>
-      <link href="/archive.html"/>
-      <url>/archive.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>我的朋友</title>
       <link href="/friends.html"/>
       <url>/friends.html</url>
@@ -234,9 +223,31 @@
     
     
     <entry>
+      <title>文章归档</title>
+      <link href="/archive.html"/>
+      <url>/archive.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>给我赞助</title>
       <link href="/sponsor.html"/>
       <url>/sponsor.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>相册集</title>
+      <link href="/album/index.html"/>
+      <url>/album/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -267,20 +278,9 @@
     
     
     <entry>
-      <title>相册集</title>
-      <link href="/album/index.html"/>
-      <url>/album/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>日常生活</title>
-      <link href="/dailyPhoto/index.html"/>
-      <url>/dailyPhoto/index.html</url>
+      <title>即刻短文</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -300,9 +300,9 @@
     
     
     <entry>
-      <title>即刻短文</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
+      <title>日常生活</title>
+      <link href="/dailyPhoto/index.html"/>
+      <url>/dailyPhoto/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -322,9 +322,9 @@
     
     
     <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -333,9 +333,9 @@
     
     
     <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
