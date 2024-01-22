@@ -4,101 +4,6 @@
   
     
     <entry>
-      <title>教程 PS4 9.00离线更新系统+ 破解经验分享</title>
-      <link href="/posts/ff4f9ac7.html"/>
-      <url>/posts/ff4f9ac7.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="首先感谢国内外大佬对破解做出的贡献努力"><a href="#首先感谢国内外大佬对破解做出的贡献努力" class="headerlink" title="首先感谢国内外大佬对破解做出的贡献努力"></a>首先感谢国内外大佬对破解做出的贡献努力</h1><p>感谢大家dump游戏无私贡献;</p><p>关于破解系统版本需要小于等于9.00,系统低于的 下载对应固件升级到9.00</p><h2 id="简单就是几步"><a href="#简单就是几步" class="headerlink" title="简单就是几步"></a>简单就是几步</h2><ul><li>1 刷写U盘</li><li>2 网站缓存（缓存完毕断网）</li><li>3 点击破解 等待插U盘提示</li><li>4 插入U盘 （破解成功 玩吧）</li></ul><h2 id="对于正版-还没破解的朋友的建议"><a href="#对于正版-还没破解的朋友的建议" class="headerlink" title="对于正版 还没破解的朋友的建议:"></a>对于正版 还没破解的朋友的建议:</h2><ul><li>1.不要升级系统,</li><li>2一个游戏最好都一个一个通关,破解以后 存档继承是个问题折腾比较费劲;</li><li>3.破解后要dump光碟游戏需光碟</li></ul><h1 id="一、系统版本低于9-00需要升级-如果已经是9-00-则忽略此步骤"><a href="#一、系统版本低于9-00需要升级-如果已经是9-00-则忽略此步骤" class="headerlink" title="一、系统版本低于9.00需要升级 如果已经是9.00 则忽略此步骤"></a>一、系统版本低于9.00需要升级 如果已经是9.00 则忽略此步骤</h1><p>如果是没有光驱版看没有光驱升级系统教程，有光驱则继续看</p><p>官网下载最新固件 <a href="https://asia.playstation.com/chs-hk/ps4/system-update/#pc-update">链接</a><br><img src="/images/game-ps4-offline-system-upgrade/step1.jpg" alt="setp"></p><h2 id="准备一个U盘在电脑上格式化成ExFAT"><a href="#准备一个U盘在电脑上格式化成ExFAT" class="headerlink" title="准备一个U盘在电脑上格式化成ExFAT"></a>准备一个U盘在电脑上格式化成ExFAT</h2><p>下载9.00固件到电脑上并改名为PS4UPDATE.PUP<br>(升级用”升级固件”。换了新硬盘的，用“完整固件”)</p><p>在根目录建立一个名为PS4的文件夹，再在PS4文件夹内建立一个UPDATE文件夹，再把PS4UPDATE.PUP拷进文件夹内，把U盘接在PS4的U口上。<br><img src="/images/game-ps4-offline-system-upgrade/step2.png" alt="step"></p><p>(U盘根目录：PS4\UPDATE\PS4UPDATE.PUP)彻底关机进安全模式升级固件。</p><p>注意：无法升级的：登陆破解页面，找到你当前版本 9.00，取消屏蔽升级。再重新进行升级。</p><p>进入安全模式方法<br>彻底关机后，长按开机键7秒（会听到滴一声，7秒后会再听到滴一声，然后立即放手）<br>用数据线接手柄操作</p><p><img src="/images/game-ps4-offline-system-upgrade/step3.jpg" alt="setp"></p><p>注意：升级的时候一定要看清楚系统提示要升级的版本号，确保是9.00才进行下一步。一定要确认无误后再点确定<br><img src="/images/game-ps4-offline-system-upgrade/step4.jpg" alt="setp"><br><img src="/images/game-ps4-offline-system-upgrade/step5.jpg" alt="setp"><br>这里应该显示是9.00系统<br><img src="/images/game-ps4-offline-system-upgrade/step6.jpg" alt="setp"></p><p>之后等PS4自动更新完成后，自动重启进入系统  再联网用最新的XXX破解即可。<br>完成后大功告成，下面我们来查查升级后的版本信息<br>首先还是进入设定选项，进入后按照下图选择</p><p><img src="/images/game-ps4-offline-system-upgrade/step7.jpg" alt="setp"><br><img src="/images/game-ps4-offline-system-upgrade/step8.jpg" alt="setp"></p><p>PS4在系统里是认不出U盘的（如果要认出U盘，要接一个大于128G的U盘或者移动硬盘，然后用PS4格式化一下就能认出了，但你是升级固件，不是为PS4增加一个外置硬盘），只要你确定自己的U盘是正常的（千万不要用扩容盘），已经格式化成FAT32格式，确定已经拷贝了9.00固件，直接进安全模式升级就行了，不要纠结为什么PS4不认出U盘。在安全模式升级过程中，PS4会自己读取U盘的固件的。</p><h1 id="二、破解教程开始"><a href="#二、破解教程开始" class="headerlink" title="二、破解教程开始"></a>二、破解教程开始</h1><p>1.需要u盘<br>2.软件 Win32DiskImager 软件以及 exfathax.img 文件写入U盘<br><img src="/images/game-ps4-offline-system-upgrade/Win32DiskImager.png" alt="Win32DiskImager"><br>软件官网下载地址<br><a href="https://win32diskimager.org/#download">win32diskimager.org&#x2F;#download</a></p><p>选择img文件  设备选择你的U盘 盘符   下边选择写入就行 几秒钟就行了</p><p>3.设置热点访问网站 豆子哥9v4版本<br>如果是第一次破解需要<br>浏览器 打开前清理缓存 清理历史记录<br>添加过书签以后就不用再联网也能访问<br>地址psgo.gitee.io&#x2F;9v4&#x2F;index.html<br>此站已经挂了</p><p>9.00可以用的网站汇总 共15个网站 欢迎补充<br><a href="https://91hm.github.io/posts/a6e157d3.html">https://91hm.github.io/posts/a6e157d3.html</a><br>看这个</p><p>缓存进度条 到100%后 添加书签<br>缓存成功后先关闭网络。在进入浏览器破解即可~<br><img src="/images/game-ps4-site/game-site1.png" alt="game-site1"></p><p>点击 9.00 v11</p><p>按照提示插入刚写好的U盘 等待破解即可。<br>不要提前插入U盘不然就破解失败，不要着急点确定。按照破解提示插入U盘才能插入不然就断电了<br>(插入U盘 提示错误不支持设备, 等2-3秒点浏览器上的确定)  </p><p>破解成功可以在设置里看到GoldHEN 或者 debug菜单<br>GoldHEN 后期优化版本 默认是隐藏了debug菜单 需要手动打开 </p><p><img src="/images/game-ps4-offline-system-upgrade/debug1.jpg" alt="debug"><br><img src="/images/game-ps4-offline-system-upgrade/debug2.jpg" alt="debug"></p><p>网站 缓存 9.0的破解文件（缓存完后记得关闭网络连接  然后重新打开浏览器点9.0破解等插入U盘提示）<br>提示你插U盘时候插进去就行了  然后等提示 就成功了   开始享受吧<br>（不需要什么PC和手机注入之类的操作  就插个U盘就行了）</p><p>软件全家桶地址</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接: https://pan.baidu.com/s/1vBvLhXjNW5cLKmJBOWQ-8w?pwd=hk6t</span><br><span class="line">提取码: hk6t </span><br></pre></td></tr></table></figure><h1 id="三、萌新不会安装游戏-教程"><a href="#三、萌新不会安装游戏-教程" class="headerlink" title="三、萌新不会安装游戏 教程"></a>三、萌新不会安装游戏 教程</h1><p>1.破解成功 可以用u盘拷贝游戏pkg到根目录<br>2.方法:设置-&gt;最下面可以看到debug模式（如果看不见debug  点击最上面的GoldHEN 安装）<br>点第一行 install all 全部安装</p><p>原本光盘安装游戏不能直接运行,如果你有光盘可以dump游戏无私贡献;论坛很多教程;</p><h1 id="四、结束-总结"><a href="#四、结束-总结" class="headerlink" title="四、结束 总结"></a>四、结束 总结</h1><p>说的详细 其实简单就是几步<br>1 刷写U盘<br>2 网站缓存（缓存完毕断网）<br>3 点击破解 等待插U盘提示<br>4 插入U盘 （破解成功 玩吧）</p><p>总结 在这个项目中，您将找到一个尝试利用固件 9.00 上 PlayStation 4 的文件系统错误的实现。 该错误是在比较 9.00 和 9.03 内核时发现的。 它将需要一个带有修改过的 exfat 文件系统的驱动器。 成功触发它将允许您将任意代码作为内核运行，从而允许对系统进行越狱和内核级修改。 将启动通常的有效载荷启动器（在端口 9020 上）。</p><p>成功率: 非常高 基本上秒破 对比7.55系统抽奖可以直接升级, 寡人7.55最长抽奖时间快一个小时 果断放弃玩游戏了,9.00漏洞比较稳定可以长期保持的版本 稳定性堪比5.05<br>如果成功率还是很低 那么建议换个好点的U盘或者ESP32</p><h2 id="各版本稳定性对比"><a href="#各版本稳定性对比" class="headerlink" title="各版本稳定性对比"></a>各版本稳定性对比</h2><ul><li>9.00(稳定的Webkit &#x2F;内核)</li><li>7.5X(不稳定Web&#x2F;半稳定内核)</li><li>7.02(不稳定的Webkit&#x2F;半稳定的内核)</li><li>6.72(半稳定的Webkit&#x2F;内核)</li><li>5.05(稳定的Webkit &#x2F;内核)</li></ul><p>其它资源:  </p><ul><li>百度网盘不限速教程</li><li><a href="https://www.tekqart.com///thread-234658-1-1.html">https://www.tekqart.com///thread-234658-1-1.html</a></li></ul><p>祝大家玩的开心</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 生活日常 </category>
-          
-          <category> 游戏 </category>
-          
-          <category> ps4 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ps4 </tag>
-            
-            <tag> 教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>教程 离线系统升级教程|小白指南|17.0.1</title>
-      <link href="/posts/ee9ce046.html"/>
-      <url>/posts/ee9ce046.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="步骤概括-1-升级大气层整合包-2-离线升级虚拟系统-跟正版系统无关-我的正版系统目前还是16-0-1"><a href="#步骤概括-1-升级大气层整合包-2-离线升级虚拟系统-跟正版系统无关-我的正版系统目前还是16-0-1" class="headerlink" title="步骤概括:1.升级大气层整合包 2.离线升级虚拟系统 (跟正版系统无关,我的正版系统目前还是16.0.1)"></a>步骤概括:1.升级大气层整合包 2.离线升级虚拟系统 (跟正版系统无关,我的正版系统目前还是16.0.1)</h2><p><code>AK大气层整合包有更新须知，更新大气层和升级Switch系统是两步，因为大气层向下兼容，所以先更新大气层，再升级Switch系统。 Switch有真实系统和虚拟系统，真实系统是进真实正版系统联网升级，虚拟破解系统才是用Daybreak离线升级。只有单系统的Switch，进真实破解系统Daybreak离线升级。 系统离线升级包和大气层整合包这两样通用所有Switch，不区分续航，非续航，OLED等型号 最稳的替换大气层整合包，请保留nintendo和emummc后删除SD卡上其它文件，再把新的大气层整合包解压缩覆盖上去。</code></p><h2 id="先说一下-我自己的经历"><a href="#先说一下-我自己的经历" class="headerlink" title="先说一下 我自己的经历"></a>先说一下 我自己的经历</h2><p>先破解了系统 大概一年前 是16.0.1左右吧 目前想玩潜水员戴夫  需要17以上才能玩无奈指南升级系统<br>看多了好多小白升级系统 结果系统崩了 然后无法启动 一直不敢升级<br>还是想玩潜水员戴夫 所以升级系统了<br>之前破解老板跟我整的是AK的整合包 然后在论坛找到大佬的包</p><h1 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h1><p>正版系统可以无视不要管 也不要升级 (如果小白没更新大气层就更新正版系统会导致无法启动哦)<br>没事可以更新更新大气层整合包 没有什么影响坏处 一般不会有问题</p><p>像我一样不太懂就不要乱删文件 以免翻车  很多翻车是因为插件 主题等东西导致启动失败<br>如果不想翻车 建议先删除主题 其它自己装的插件<br>如果遇到异常  找找怎么装的插件 删除后重试</p><h2 id="千万要先备份哦-毕竟-存档无价"><a href="#千万要先备份哦-毕竟-存档无价" class="headerlink" title="千万要先备份哦 毕竟 存档无价"></a>千万要先备份哦 毕竟 存档无价</h2><h1 id="1-第一步先更新大气层包-详情看帖"><a href="#1-第一步先更新大气层包-详情看帖" class="headerlink" title="1.第一步先更新大气层包, 详情看帖"></a>1.第一步先更新大气层包, 详情看帖</h1><p><a href="https://www.tekqart.com/thread-291002-1-1.html">工具 AK原版大气层1.6.2个人整合包（2023.12.16）</a></p><p>大佬的签名下面可以下载整合包</p><h3 id="对应最新的整合包"><a href="#对应最新的整合包" class="headerlink" title="对应最新的整合包"></a>对应最新的整合包</h3><p>AK原版大气层1.6.2个人整合包1210版.7z<br><img src="/images/game-switch-offline-system-upgrade/upgrade1.jpg" alt="upgrade1"> </p><p>里面有我游戏的金手指  我不太会 算了不删了 就这样吧<br>下载解压 复制的存储卡根目录 会提示覆盖 全部覆盖</p><h1 id="2-第二部-拷贝下载系统文件-解压-放到存储卡根目录"><a href="#2-第二部-拷贝下载系统文件-解压-放到存储卡根目录" class="headerlink" title="2.第二部 拷贝下载系统文件 解压 放到存储卡根目录"></a>2.第二部 拷贝下载系统文件 解压 放到存储卡根目录</h1><p>AMS-17.0.1.zip</p><h1 id="3-第三部升级系统"><a href="#3-第三部升级系统" class="headerlink" title="3.第三部升级系统"></a>3.第三部升级系统</h1><p>完整操作步骤视频教程如下</p><iframe src="//player.bilibili.com/player.html?aid=663399971&bvid=BV1Aa4y1D7KZ&cid=1331618559&p=1"  width="800"height="450"frameborder="0"allowfullscreen></iframe><p><img src="/images/game-switch-offline-system-upgrade/upgrade2.jpg" alt="upgrade1"></p><p>成功升级 没有翻车</p><p>这次三上烤鸭事件，AK认为【科普大众】比【抵制小人】效果更好，【积极引导】才能减少【诱骗误导】，AK不站队不偏袒，平台做好管理，会有更多的【人才辈出】</p><h2 id="闲聊部分更正内容"><a href="#闲聊部分更正内容" class="headerlink" title="闲聊部分更正内容:"></a>闲聊部分更正内容:</h2><p>感谢AK大佬对本科普的关注<br>我不算小白 也不算大佬 Switch升级系统也是一知半解  ♥♥AK杂谈♥♥2023.12.5，SW升级17.0.1系统，小版本更新不碍事<br>引用帖子内容 误以为是升级的帖子然而不是<br>看了好几个帖子 在发帖呃时候引用错误 表述错误 已经更正</p><p>我也没删东西 完全覆盖 也成功更新了大气层  然后更新系统 也没出错  </p><h1 id="正确做法-跟着视频步骤来"><a href="#正确做法-跟着视频步骤来" class="headerlink" title="正确做法 跟着视频步骤来"></a>正确做法 跟着视频步骤来</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 生活日常 </category>
-          
-          <category> 游戏 </category>
-          
-          <category> switch </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> switch </tag>
-            
-            <tag> 离线升级教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>教程 9.00可以用的网站汇总 共15个网站 欢迎补充</title>
-      <link href="/posts/a6e157d3.html"/>
-      <url>/posts/a6e157d3.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="一共15个国内外网站放在下面-自取-懒得搬运了"><a href="#一共15个国内外网站放在下面-自取-懒得搬运了" class="headerlink" title="一共15个国内外网站放在下面 自取,懒得搬运了"></a>一共15个国内外网站放在下面 自取,懒得搬运了</h1><p>感兴趣可以自建站</p><h1 id="国内"><a href="#国内" class="headerlink" title="国内"></a>国内</h1><p><img src="/images/game-ps4-site/game-site1.png" alt="game-site1"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://psgo.eu.org/</span><br></pre></td></tr></table></figure><p><img src="/images/game-ps4-site/game-site2.png" alt="game-site1"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://zerofo.gitee.io/</span><br></pre></td></tr></table></figure><p><img src="/images/game-ps4-site/game-site3.png" alt="game-site1"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://ps4.gamekegs.com/</span><br></pre></td></tr></table></figure><p><img src="/images/game-ps4-site/game-site4.png" alt="game-site1"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cbepx-me.github.io/</span><br></pre></td></tr></table></figure><h2 id="国外"><a href="#国外" class="headerlink" title="国外"></a>国外</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">http://karo218.ir/</span><br><span class="line"></span><br><span class="line">https://gamerhack.github.io/</span><br><span class="line"></span><br><span class="line">http://nightkinghost.com/</span><br><span class="line"></span><br><span class="line">https://darkmoddervc.github.io/PS4JB/</span><br><span class="line"></span><br><span class="line">http://wolf2022.ir/1index.html</span><br><span class="line"></span><br><span class="line">https://cthugha.exploit.menu/</span><br><span class="line"></span><br><span class="line">http://kmeps4.site/index.html</span><br><span class="line"></span><br><span class="line">https://devcrono.github.io/crono_dreambox900auto3/</span><br><span class="line"></span><br><span class="line">https://mugiwara-v2.github.io/Restore-9.0/</span><br><span class="line"></span><br><span class="line">https://mugiwara-v2.github.io/host-v1/</span><br><span class="line"></span><br><span class="line">https://ps4macedo.github.io/900noguia/</span><br></pre></td></tr></table></figure><h1 id="金手指"><a href="#金手指" class="headerlink" title="金手指"></a>金手指</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://prb123.ir/leefultrainer/index.html</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 生活日常 </category>
-          
-          <category> 游戏 </category>
-          
-          <category> ps4 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ps4 </tag>
-            
-            <tag> 游戏 </tag>
-            
-            <tag> 网站 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>通过 pip3 安装时如何解决“错误：外部管理环境”</title>
       <link href="/posts/45229b10.html"/>
       <url>/posts/45229b10.html</url>
@@ -325,11 +230,11 @@
     
     
     <entry>
-      <title>教程 只狼MOD：影逝二度 MOD Sekiro Shadows D.T. 中文版 CUSA13910 V1.06</title>
-      <link href="/posts/555df561.html"/>
-      <url>/posts/555df561.html</url>
+      <title>教程 switch离线系统升级教程|小白指南|17.0.1</title>
+      <link href="/posts/ee9ce046.html"/>
+      <url>/posts/ee9ce046.html</url>
       
-        <content type="html"><![CDATA[<p>寡人制作了只狼人物MOD 1.05版 + 金手指</p><p>看到某大神做的1.06MOD 觉得挺好 可以无限复活   (主要是ps4 死了重新读条浪费时间,不掉血 又没意思)<br>先在大神制作的基础上 加尼尔的MOD</p><p>基于这个金手指</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[3rd 更新] 只狼：影逝二度 Sekiro Shadows D.T. 中文版 CUSA13910 V1.06</span><br><span class="line">https://www.tekqart.com/thread-307319-1-2.html</span><br></pre></td></tr></table></figure><p>工具地址</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/CyB1K/PS4-Fake-PKG-Tools-3.87</span><br></pre></td></tr></table></figure><h2 id="1-解压"><a href="#1-解压" class="headerlink" title="1.解压"></a>1.解压</h2><p><img src="/images/game-ps4-mod-sekiro-shadows/1.step.png" alt="step"></p><h1 id="重点-从原本的包里面-解压出来sce-sys-全部复制到补丁包里面-不然游戏运行不起来"><a href="#重点-从原本的包里面-解压出来sce-sys-全部复制到补丁包里面-不然游戏运行不起来" class="headerlink" title="重点 从原本的包里面 解压出来sce_sys 全部复制到补丁包里面 不然游戏运行不起来"></a>重点 从原本的包里面 解压出来sce_sys 全部复制到补丁包里面 不然游戏运行不起来</h1><h2 id="2-创建-CUSA13910-gp4"><a href="#2-创建-CUSA13910-gp4" class="headerlink" title="2.创建 CUSA13910.gp4"></a>2.创建 CUSA13910.gp4</h2><p><img src="/images/game-ps4-mod-sekiro-shadows/2.gp4.png" alt="gp4"></p><h2 id="3-修改-保存"><a href="#3-修改-保存" class="headerlink" title="3.修改 保存"></a>3.修改 保存</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg_ps4_app 替换  pkg_ps4_patch </span><br><span class="line">digital50 替换为 digital25</span><br></pre></td></tr></table></figure><p><img src="/images/game-ps4-mod-sekiro-shadows/3step.png" alt="3step"></p><h2 id="4-打开gp4-并选择base-1-06的包"><a href="#4-打开gp4-并选择base-1-06的包" class="headerlink" title="4.打开gp4 并选择base 1.06的包"></a>4.打开gp4 并选择base 1.06的包</h2><p><img src="/images/game-ps4-mod-sekiro-shadows/4step.png" alt="4step"></p><h2 id="5-打包失败-重新复制param-sfo"><a href="#5-打包失败-重新复制param-sfo" class="headerlink" title="5.打包失败 重新复制param.sfo"></a>5.打包失败 重新复制param.sfo</h2><p><img src="/images/game-ps4-mod-sekiro-shadows/5step.png"></p><h2 id="6-打包的话-可以打包成功导出文件为"><a href="#6-打包的话-可以打包成功导出文件为" class="headerlink" title="6.打包的话 可以打包成功导出文件为"></a>6.打包的话 可以打包成功导出文件为</h2><p>HP0506-CUSA13910_00-SEKIROGAME000001-A0106-V0100-.pkg<br><img src="/images/game-ps4-mod-sekiro-shadows/8view.jpg"><br><img src="/images/game-ps4-mod-sekiro-shadows/9view.jpg"><br><img src="/images/game-ps4-mod-sekiro-shadows/10view.jpg"></p><p>终于做成了只狼金手指MOD</p><p>修改效果：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">V1</span><br><span class="line">max Money | 最大金钱</span><br><span class="line">No Fall Damage | 无坠落伤害</span><br><span class="line">Infinite Resurrection | 无限回生</span><br><span class="line">Resurrection No Cooldown | 回生无需冷却</span><br><span class="line">Quick Level Up | 快速升级 (杀1敌升1级)</span><br><span class="line">Auto Pickup Loots | 自动拾取敌人掉落物</span><br><span class="line">Immune All Negative Effects | 免疫全部异常状态</span><br><span class="line">No Money and EXP Loss Upon Death | 死亡不会损失金钱和经验</span><br><span class="line">Infinite Spirit Emblems Use | 纸人使用不减 (by C4)</span><br></pre></td></tr></table></figure><p>网盘</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">链接: https://pan.baidu.com/s/1Roqlsg3HWs-egs9XY2yDtQ?pwd=91tv 提取码: 91tv </span><br></pre></td></tr></table></figure><p>分享了我打包的文件夹目录 有需要自己制作MOD的 可以把mod文件里面的parts至解包PKG的目录下，有的MOD带chr，mtd都复制到dvdroot_ps4目录下  </p><p>最后 大家注意身体啊  哈哈哈哈</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="步骤概括-1-升级大气层整合包-2-离线升级虚拟系统-跟正版系统无关-我的正版系统目前还是16-0-1"><a href="#步骤概括-1-升级大气层整合包-2-离线升级虚拟系统-跟正版系统无关-我的正版系统目前还是16-0-1" class="headerlink" title="步骤概括:1.升级大气层整合包 2.离线升级虚拟系统 (跟正版系统无关,我的正版系统目前还是16.0.1)"></a>步骤概括:1.升级大气层整合包 2.离线升级虚拟系统 (跟正版系统无关,我的正版系统目前还是16.0.1)</h2><p><code>AK大气层整合包有更新须知，更新大气层和升级Switch系统是两步，因为大气层向下兼容，所以先更新大气层，再升级Switch系统。 Switch有真实系统和虚拟系统，真实系统是进真实正版系统联网升级，虚拟破解系统才是用Daybreak离线升级。只有单系统的Switch，进真实破解系统Daybreak离线升级。 系统离线升级包和大气层整合包这两样通用所有Switch，不区分续航，非续航，OLED等型号 最稳的替换大气层整合包，请保留nintendo和emummc后删除SD卡上其它文件，再把新的大气层整合包解压缩覆盖上去。</code></p><h2 id="先说一下-我自己的经历"><a href="#先说一下-我自己的经历" class="headerlink" title="先说一下 我自己的经历"></a>先说一下 我自己的经历</h2><p>先破解了系统 大概一年前 是16.0.1左右吧 目前想玩潜水员戴夫  需要17以上才能玩无奈指南升级系统<br>看多了好多小白升级系统 结果系统崩了 然后无法启动 一直不敢升级<br>还是想玩潜水员戴夫 所以升级系统了<br>之前破解老板跟我整的是AK的整合包 然后在论坛找到大佬的包</p><h1 id="科普"><a href="#科普" class="headerlink" title="科普"></a>科普</h1><p>正版系统可以无视不要管 也不要升级 (如果小白没更新大气层就更新正版系统会导致无法启动哦)<br>没事可以更新更新大气层整合包 没有什么影响坏处 一般不会有问题</p><p>像我一样不太懂就不要乱删文件 以免翻车  很多翻车是因为插件 主题等东西导致启动失败<br>如果不想翻车 建议先删除主题 其它自己装的插件<br>如果遇到异常  找找怎么装的插件 删除后重试</p><h2 id="千万要先备份哦-毕竟-存档无价"><a href="#千万要先备份哦-毕竟-存档无价" class="headerlink" title="千万要先备份哦 毕竟 存档无价"></a>千万要先备份哦 毕竟 存档无价</h2><h1 id="1-第一步先更新大气层包-详情看帖"><a href="#1-第一步先更新大气层包-详情看帖" class="headerlink" title="1.第一步先更新大气层包, 详情看帖"></a>1.第一步先更新大气层包, 详情看帖</h1><p><a href="https://www.tekqart.com/thread-291002-1-1.html">工具 AK原版大气层1.6.2个人整合包（2023.12.16）</a></p><p>大佬的签名下面可以下载整合包</p><h3 id="对应最新的整合包"><a href="#对应最新的整合包" class="headerlink" title="对应最新的整合包"></a>对应最新的整合包</h3><p>AK原版大气层1.6.2个人整合包1210版.7z<br><img src="/images/game-switch-offline-system-upgrade/upgrade1.jpg" alt="upgrade1"> </p><p>里面有我游戏的金手指  我不太会 算了不删了 就这样吧<br>下载解压 复制的存储卡根目录 会提示覆盖 全部覆盖</p><h1 id="2-第二部-拷贝下载系统文件-解压-放到存储卡根目录"><a href="#2-第二部-拷贝下载系统文件-解压-放到存储卡根目录" class="headerlink" title="2.第二部 拷贝下载系统文件 解压 放到存储卡根目录"></a>2.第二部 拷贝下载系统文件 解压 放到存储卡根目录</h1><p>AMS-17.0.1.zip</p><h1 id="3-第三部升级系统"><a href="#3-第三部升级系统" class="headerlink" title="3.第三部升级系统"></a>3.第三部升级系统</h1><p>完整操作步骤视频教程如下</p><iframe src="//player.bilibili.com/player.html?aid=663399971&bvid=BV1Aa4y1D7KZ&cid=1331618559&p=1"  width="800"height="450"frameborder="0"allowfullscreen></iframe><p><img src="/images/game-switch-offline-system-upgrade/upgrade2.jpg" alt="upgrade1"></p><p>成功升级 没有翻车</p><p>这次三上烤鸭事件，AK认为【科普大众】比【抵制小人】效果更好，【积极引导】才能减少【诱骗误导】，AK不站队不偏袒，平台做好管理，会有更多的【人才辈出】</p><h2 id="闲聊部分更正内容"><a href="#闲聊部分更正内容" class="headerlink" title="闲聊部分更正内容:"></a>闲聊部分更正内容:</h2><p>感谢AK大佬对本科普的关注<br>我不算小白 也不算大佬 Switch升级系统也是一知半解  ♥♥AK杂谈♥♥2023.12.5，SW升级17.0.1系统，小版本更新不碍事<br>引用帖子内容 误以为是升级的帖子然而不是<br>看了好几个帖子 在发帖呃时候引用错误 表述错误 已经更正</p><p>我也没删东西 完全覆盖 也成功更新了大气层  然后更新系统 也没出错  </p><h1 id="正确做法-跟着视频步骤来"><a href="#正确做法-跟着视频步骤来" class="headerlink" title="正确做法 跟着视频步骤来"></a>正确做法 跟着视频步骤来</h1>]]></content>
       
       
       <categories>
@@ -338,18 +243,16 @@
           
           <category> 游戏 </category>
           
-          <category> ps4 </category>
+          <category> switch </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> ps4 </tag>
+            <tag> switch </tag>
             
-            <tag> mod </tag>
-            
-            <tag> 只狼 </tag>
+            <tag> 离线升级教程 </tag>
             
         </tags>
       
@@ -424,6 +327,103 @@
     
     
     <entry>
+      <title>教程 9.00可以用的网站汇总 共15个网站 欢迎补充</title>
+      <link href="/posts/a6e157d3.html"/>
+      <url>/posts/a6e157d3.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="一共15个国内外网站放在下面-自取-懒得搬运了"><a href="#一共15个国内外网站放在下面-自取-懒得搬运了" class="headerlink" title="一共15个国内外网站放在下面 自取,懒得搬运了"></a>一共15个国内外网站放在下面 自取,懒得搬运了</h1><p>感兴趣可以自建站</p><h1 id="国内"><a href="#国内" class="headerlink" title="国内"></a>国内</h1><p><img src="/images/game-ps4-site/game-site1.png" alt="game-site1"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://psgo.eu.org/</span><br></pre></td></tr></table></figure><p><img src="/images/game-ps4-site/game-site2.png" alt="game-site1"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://zerofo.gitee.io/</span><br></pre></td></tr></table></figure><p><img src="/images/game-ps4-site/game-site3.png" alt="game-site1"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://ps4.gamekegs.com/</span><br></pre></td></tr></table></figure><p><img src="/images/game-ps4-site/game-site4.png" alt="game-site1"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cbepx-me.github.io/</span><br></pre></td></tr></table></figure><h2 id="国外"><a href="#国外" class="headerlink" title="国外"></a>国外</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">http://karo218.ir/</span><br><span class="line"></span><br><span class="line">https://gamerhack.github.io/</span><br><span class="line"></span><br><span class="line">http://nightkinghost.com/</span><br><span class="line"></span><br><span class="line">https://darkmoddervc.github.io/PS4JB/</span><br><span class="line"></span><br><span class="line">http://wolf2022.ir/1index.html</span><br><span class="line"></span><br><span class="line">https://cthugha.exploit.menu/</span><br><span class="line"></span><br><span class="line">http://kmeps4.site/index.html</span><br><span class="line"></span><br><span class="line">https://devcrono.github.io/crono_dreambox900auto3/</span><br><span class="line"></span><br><span class="line">https://mugiwara-v2.github.io/Restore-9.0/</span><br><span class="line"></span><br><span class="line">https://mugiwara-v2.github.io/host-v1/</span><br><span class="line"></span><br><span class="line">https://ps4macedo.github.io/900noguia/</span><br></pre></td></tr></table></figure><h1 id="金手指"><a href="#金手指" class="headerlink" title="金手指"></a>金手指</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://prb123.ir/leefultrainer/index.html</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活日常 </category>
+          
+          <category> 游戏 </category>
+          
+          <category> ps4 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ps4 </tag>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> 网站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>教程 只狼MOD：影逝二度 MOD Sekiro Shadows D.T. 中文版 CUSA13910 V1.06</title>
+      <link href="/posts/555df561.html"/>
+      <url>/posts/555df561.html</url>
+      
+        <content type="html"><![CDATA[<p>寡人制作了只狼人物MOD 1.05版 + 金手指</p><p>看到某大神做的1.06MOD 觉得挺好 可以无限复活   (主要是ps4 死了重新读条浪费时间,不掉血 又没意思)<br>先在大神制作的基础上 加尼尔的MOD</p><p>基于这个金手指</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[3rd 更新] 只狼：影逝二度 Sekiro Shadows D.T. 中文版 CUSA13910 V1.06</span><br><span class="line">https://www.tekqart.com/thread-307319-1-2.html</span><br></pre></td></tr></table></figure><p>工具地址</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/CyB1K/PS4-Fake-PKG-Tools-3.87</span><br></pre></td></tr></table></figure><h2 id="1-解压"><a href="#1-解压" class="headerlink" title="1.解压"></a>1.解压</h2><p><img src="/images/game-ps4-mod-sekiro-shadows/1.step.png" alt="step"></p><h1 id="重点-从原本的包里面-解压出来sce-sys-全部复制到补丁包里面-不然游戏运行不起来"><a href="#重点-从原本的包里面-解压出来sce-sys-全部复制到补丁包里面-不然游戏运行不起来" class="headerlink" title="重点 从原本的包里面 解压出来sce_sys 全部复制到补丁包里面 不然游戏运行不起来"></a>重点 从原本的包里面 解压出来sce_sys 全部复制到补丁包里面 不然游戏运行不起来</h1><h2 id="2-创建-CUSA13910-gp4"><a href="#2-创建-CUSA13910-gp4" class="headerlink" title="2.创建 CUSA13910.gp4"></a>2.创建 CUSA13910.gp4</h2><p><img src="/images/game-ps4-mod-sekiro-shadows/2.gp4.png" alt="gp4"></p><h2 id="3-修改-保存"><a href="#3-修改-保存" class="headerlink" title="3.修改 保存"></a>3.修改 保存</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg_ps4_app 替换  pkg_ps4_patch </span><br><span class="line">digital50 替换为 digital25</span><br></pre></td></tr></table></figure><p><img src="/images/game-ps4-mod-sekiro-shadows/3step.png" alt="3step"></p><h2 id="4-打开gp4-并选择base-1-06的包"><a href="#4-打开gp4-并选择base-1-06的包" class="headerlink" title="4.打开gp4 并选择base 1.06的包"></a>4.打开gp4 并选择base 1.06的包</h2><p><img src="/images/game-ps4-mod-sekiro-shadows/4step.png" alt="4step"></p><h2 id="5-打包失败-重新复制param-sfo"><a href="#5-打包失败-重新复制param-sfo" class="headerlink" title="5.打包失败 重新复制param.sfo"></a>5.打包失败 重新复制param.sfo</h2><p><img src="/images/game-ps4-mod-sekiro-shadows/5step.png"></p><h2 id="6-打包的话-可以打包成功导出文件为"><a href="#6-打包的话-可以打包成功导出文件为" class="headerlink" title="6.打包的话 可以打包成功导出文件为"></a>6.打包的话 可以打包成功导出文件为</h2><p>HP0506-CUSA13910_00-SEKIROGAME000001-A0106-V0100-.pkg<br><img src="/images/game-ps4-mod-sekiro-shadows/8view.jpg"><br><img src="/images/game-ps4-mod-sekiro-shadows/9view.jpg"><br><img src="/images/game-ps4-mod-sekiro-shadows/10view.jpg"></p><p>终于做成了只狼金手指MOD</p><p>修改效果：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">V1</span><br><span class="line">max Money | 最大金钱</span><br><span class="line">No Fall Damage | 无坠落伤害</span><br><span class="line">Infinite Resurrection | 无限回生</span><br><span class="line">Resurrection No Cooldown | 回生无需冷却</span><br><span class="line">Quick Level Up | 快速升级 (杀1敌升1级)</span><br><span class="line">Auto Pickup Loots | 自动拾取敌人掉落物</span><br><span class="line">Immune All Negative Effects | 免疫全部异常状态</span><br><span class="line">No Money and EXP Loss Upon Death | 死亡不会损失金钱和经验</span><br><span class="line">Infinite Spirit Emblems Use | 纸人使用不减 (by C4)</span><br></pre></td></tr></table></figure><p>网盘</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">链接: https://pan.baidu.com/s/1Roqlsg3HWs-egs9XY2yDtQ?pwd=91tv 提取码: 91tv </span><br></pre></td></tr></table></figure><p>分享了我打包的文件夹目录 有需要自己制作MOD的 可以把mod文件里面的parts至解包PKG的目录下，有的MOD带chr，mtd都复制到dvdroot_ps4目录下  </p><p>最后 大家注意身体啊  哈哈哈哈</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活日常 </category>
+          
+          <category> 游戏 </category>
+          
+          <category> ps4 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ps4 </tag>
+            
+            <tag> mod </tag>
+            
+            <tag> 只狼 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>教程 PS4 9.00离线更新系统+ 破解经验分享</title>
+      <link href="/posts/ff4f9ac7.html"/>
+      <url>/posts/ff4f9ac7.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="首先感谢国内外大佬对破解做出的贡献努力"><a href="#首先感谢国内外大佬对破解做出的贡献努力" class="headerlink" title="首先感谢国内外大佬对破解做出的贡献努力"></a>首先感谢国内外大佬对破解做出的贡献努力</h1><p>感谢大家dump游戏无私贡献;</p><p>关于破解系统版本需要小于等于9.00,系统低于的 下载对应固件升级到9.00</p><h2 id="简单就是几步"><a href="#简单就是几步" class="headerlink" title="简单就是几步"></a>简单就是几步</h2><ul><li>1 刷写U盘</li><li>2 网站缓存（缓存完毕断网）</li><li>3 点击破解 等待插U盘提示</li><li>4 插入U盘 （破解成功 玩吧）</li></ul><h2 id="对于正版-还没破解的朋友的建议"><a href="#对于正版-还没破解的朋友的建议" class="headerlink" title="对于正版 还没破解的朋友的建议:"></a>对于正版 还没破解的朋友的建议:</h2><ul><li>1.不要升级系统,</li><li>2一个游戏最好都一个一个通关,破解以后 存档继承是个问题折腾比较费劲;</li><li>3.破解后要dump光碟游戏需光碟</li></ul><h1 id="一、系统版本低于9-00需要升级-如果已经是9-00-则忽略此步骤"><a href="#一、系统版本低于9-00需要升级-如果已经是9-00-则忽略此步骤" class="headerlink" title="一、系统版本低于9.00需要升级 如果已经是9.00 则忽略此步骤"></a>一、系统版本低于9.00需要升级 如果已经是9.00 则忽略此步骤</h1><p>如果是没有光驱版看没有光驱升级系统教程，有光驱则继续看</p><p>官网下载最新固件 <a href="https://asia.playstation.com/chs-hk/ps4/system-update/#pc-update">链接</a><br><img src="/images/game-ps4-offline-system-upgrade/step1.jpg" alt="setp"></p><h2 id="准备一个U盘在电脑上格式化成ExFAT"><a href="#准备一个U盘在电脑上格式化成ExFAT" class="headerlink" title="准备一个U盘在电脑上格式化成ExFAT"></a>准备一个U盘在电脑上格式化成ExFAT</h2><p>下载9.00固件到电脑上并改名为PS4UPDATE.PUP<br>(升级用”升级固件”。换了新硬盘的，用“完整固件”)</p><p>在根目录建立一个名为PS4的文件夹，再在PS4文件夹内建立一个UPDATE文件夹，再把PS4UPDATE.PUP拷进文件夹内，把U盘接在PS4的U口上。<br><img src="/images/game-ps4-offline-system-upgrade/step2.png" alt="step"></p><p>(U盘根目录：PS4\UPDATE\PS4UPDATE.PUP)彻底关机进安全模式升级固件。</p><p>注意：无法升级的：登陆破解页面，找到你当前版本 9.00，取消屏蔽升级。再重新进行升级。</p><p>进入安全模式方法<br>彻底关机后，长按开机键7秒（会听到滴一声，7秒后会再听到滴一声，然后立即放手）<br>用数据线接手柄操作</p><p><img src="/images/game-ps4-offline-system-upgrade/step3.jpg" alt="setp"></p><p>注意：升级的时候一定要看清楚系统提示要升级的版本号，确保是9.00才进行下一步。一定要确认无误后再点确定<br><img src="/images/game-ps4-offline-system-upgrade/step4.jpg" alt="setp"><br><img src="/images/game-ps4-offline-system-upgrade/step5.jpg" alt="setp"><br>这里应该显示是9.00系统<br><img src="/images/game-ps4-offline-system-upgrade/step6.jpg" alt="setp"></p><p>之后等PS4自动更新完成后，自动重启进入系统  再联网用最新的XXX破解即可。<br>完成后大功告成，下面我们来查查升级后的版本信息<br>首先还是进入设定选项，进入后按照下图选择</p><p><img src="/images/game-ps4-offline-system-upgrade/step7.jpg" alt="setp"><br><img src="/images/game-ps4-offline-system-upgrade/step8.jpg" alt="setp"></p><p>PS4在系统里是认不出U盘的（如果要认出U盘，要接一个大于128G的U盘或者移动硬盘，然后用PS4格式化一下就能认出了，但你是升级固件，不是为PS4增加一个外置硬盘），只要你确定自己的U盘是正常的（千万不要用扩容盘），已经格式化成FAT32格式，确定已经拷贝了9.00固件，直接进安全模式升级就行了，不要纠结为什么PS4不认出U盘。在安全模式升级过程中，PS4会自己读取U盘的固件的。</p><h1 id="二、破解教程开始"><a href="#二、破解教程开始" class="headerlink" title="二、破解教程开始"></a>二、破解教程开始</h1><p>1.需要u盘<br>2.软件 Win32DiskImager 软件以及 exfathax.img 文件写入U盘<br><img src="/images/game-ps4-offline-system-upgrade/Win32DiskImager.png" alt="Win32DiskImager"><br>软件官网下载地址<br><a href="https://win32diskimager.org/#download">win32diskimager.org&#x2F;#download</a></p><p>选择img文件  设备选择你的U盘 盘符   下边选择写入就行 几秒钟就行了</p><p>3.设置热点访问网站 豆子哥9v4版本<br>如果是第一次破解需要<br>浏览器 打开前清理缓存 清理历史记录<br>添加过书签以后就不用再联网也能访问<br>地址psgo.gitee.io&#x2F;9v4&#x2F;index.html<br>此站已经挂了</p><p>9.00可以用的网站汇总 共15个网站 欢迎补充<br><a href="https://91hm.github.io/posts/a6e157d3.html">https://91hm.github.io/posts/a6e157d3.html</a><br>看这个</p><p>缓存进度条 到100%后 添加书签<br>缓存成功后先关闭网络。在进入浏览器破解即可~<br><img src="/images/game-ps4-site/game-site1.png" alt="game-site1"></p><p>点击 9.00 v11</p><p>按照提示插入刚写好的U盘 等待破解即可。<br>不要提前插入U盘不然就破解失败，不要着急点确定。按照破解提示插入U盘才能插入不然就断电了<br>(插入U盘 提示错误不支持设备, 等2-3秒点浏览器上的确定)  </p><p>破解成功可以在设置里看到GoldHEN 或者 debug菜单<br>GoldHEN 后期优化版本 默认是隐藏了debug菜单 需要手动打开 </p><p><img src="/images/game-ps4-offline-system-upgrade/debug1.jpg" alt="debug"><br><img src="/images/game-ps4-offline-system-upgrade/debug2.jpg" alt="debug"></p><p>网站 缓存 9.0的破解文件（缓存完后记得关闭网络连接  然后重新打开浏览器点9.0破解等插入U盘提示）<br>提示你插U盘时候插进去就行了  然后等提示 就成功了   开始享受吧<br>（不需要什么PC和手机注入之类的操作  就插个U盘就行了）</p><p>软件全家桶地址</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">链接: https://pan.baidu.com/s/1vBvLhXjNW5cLKmJBOWQ-8w?pwd=hk6t</span><br><span class="line">提取码: hk6t </span><br></pre></td></tr></table></figure><h1 id="三、萌新不会安装游戏-教程"><a href="#三、萌新不会安装游戏-教程" class="headerlink" title="三、萌新不会安装游戏 教程"></a>三、萌新不会安装游戏 教程</h1><p>1.破解成功 可以用u盘拷贝游戏pkg到根目录<br>2.方法:设置-&gt;最下面可以看到debug模式（如果看不见debug  点击最上面的GoldHEN 安装）<br>点第一行 install all 全部安装</p><p>原本光盘安装游戏不能直接运行,如果你有光盘可以dump游戏无私贡献;论坛很多教程;</p><h1 id="四、结束-总结"><a href="#四、结束-总结" class="headerlink" title="四、结束 总结"></a>四、结束 总结</h1><p>说的详细 其实简单就是几步<br>1 刷写U盘<br>2 网站缓存（缓存完毕断网）<br>3 点击破解 等待插U盘提示<br>4 插入U盘 （破解成功 玩吧）</p><p>总结 在这个项目中，您将找到一个尝试利用固件 9.00 上 PlayStation 4 的文件系统错误的实现。 该错误是在比较 9.00 和 9.03 内核时发现的。 它将需要一个带有修改过的 exfat 文件系统的驱动器。 成功触发它将允许您将任意代码作为内核运行，从而允许对系统进行越狱和内核级修改。 将启动通常的有效载荷启动器（在端口 9020 上）。</p><p>成功率: 非常高 基本上秒破 对比7.55系统抽奖可以直接升级, 寡人7.55最长抽奖时间快一个小时 果断放弃玩游戏了,9.00漏洞比较稳定可以长期保持的版本 稳定性堪比5.05<br>如果成功率还是很低 那么建议换个好点的U盘或者ESP32</p><h2 id="各版本稳定性对比"><a href="#各版本稳定性对比" class="headerlink" title="各版本稳定性对比"></a>各版本稳定性对比</h2><ul><li>9.00(稳定的Webkit &#x2F;内核)</li><li>7.5X(不稳定Web&#x2F;半稳定内核)</li><li>7.02(不稳定的Webkit&#x2F;半稳定的内核)</li><li>6.72(半稳定的Webkit&#x2F;内核)</li><li>5.05(稳定的Webkit &#x2F;内核)</li></ul><p>其它资源:  </p><ul><li>百度网盘不限速教程</li><li><a href="https://www.tekqart.com///thread-234658-1-1.html">https://www.tekqart.com///thread-234658-1-1.html</a></li></ul><p>祝大家玩的开心</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活日常 </category>
+          
+          <category> 游戏 </category>
+          
+          <category> ps4 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ps4 </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>教程 破解机 电池没电 CE-30391-6 错误 解决办法</title>
       <link href="/posts/2d764f9d.html"/>
       <url>/posts/2d764f9d.html</url>
@@ -478,9 +478,9 @@
     
     
     <entry>
-      <title>相册集</title>
-      <link href="/album/index.html"/>
-      <url>/album/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -500,17 +500,6 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -522,11 +511,11 @@
     
     
     <entry>
-      <title>版权协议</title>
-      <link href="/copyright/index.html"/>
-      <url>/copyright/index.html</url>
+      <title>相册集</title>
+      <link href="/album/index.html"/>
+      <url>/album/index.html</url>
       
-        <content type="html"><![CDATA[<h1 id="版权协议"><a href="#版权协议" class="headerlink" title="版权协议"></a>版权协议</h1><p>为了保持文章质量，并保持互联网的开放共享精神，保持页面流量的稳定，综合考虑下本站的所有原创文章均采用 cc 协议中比较严格的<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">署名-非商业性使用-禁止演绎 4.0 国际标准</a>。这篇文章主要想能够更加清楚明白的介绍本站的协议标准和要求。方便你合理的使用本站的文章。</p><p>本站无广告嵌入和商业行为。违反协议的行为不仅会损害原作者的创作热情，而且会影响整个版权环境。强烈呼吁你能够在转载时遵守协议。遵守协议的行为几乎不会对你的目标产生负面影响，鼓励创作环境是每个创作者的期望。</p><h1 id="哪些文章适于本协议？"><a href="#哪些文章适于本协议？" class="headerlink" title="哪些文章适于本协议？"></a>哪些文章适于本协议？</h1><p>所有原创内容均在文章标题顶部，以及文章结尾的版权说明部分展示。<br>原创内容的非商用转载必须为完整转载且标注出处的带有完整 url 链接或访问原文之类字样的超链接。<br>作为参考资料的情况可以无需完整转载，摘录所需要的部分内容即可，但需标注出处。</p><h1 id="你可以做什么？"><a href="#你可以做什么？" class="headerlink" title="你可以做什么？"></a>你可以做什么？</h1><p>只要你遵守本页的许可，你可以自由地共享文章的内容 — 在任何媒介以任何形式复制、发行本作品。并且无需通知作者。</p><h1 id="你需要遵守什么样的许可？"><a href="#你需要遵守什么样的许可？" class="headerlink" title="你需要遵守什么样的许可？"></a>你需要遵守什么样的许可？</h1><h2 id="署名"><a href="#署名" class="headerlink" title="署名"></a>署名</h2><p>你必须标注内容的来源，你需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接提升阅读体验）。</p><h1 id="禁止商用"><a href="#禁止商用" class="headerlink" title="禁止商用"></a>禁止商用</h1><p>本站内容免费向互联网所有用户提供，分享本站文章时禁止商业性使用、禁止在转载页面中插入广告（例如谷歌广告、百度广告）、禁止阅读的拦截行为（例如关注公众号、下载 App 后观看文章）。</p><h1 id="禁止演绎"><a href="#禁止演绎" class="headerlink" title="禁止演绎"></a>禁止演绎</h1><ul><li>分享全部内容（无修改）</li><li>你需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接）</li><li>分享部分截取内容或者衍生创作</li><li>目前本站全部原创文章的衍生品禁止公开分享和分发。如有更好的修改建议，可以在对应文章下留言。如有衍生创作需求，可以在评论中联系。</li><li>作为参考资料截取部分内容</li><li>作为参考资料的情况可以无需完整转载，摘录所需要的部分内容即可，但需标注出处。</li></ul><h1 id="什么内容会被版权保护"><a href="#什么内容会被版权保护" class="headerlink" title="什么内容会被版权保护"></a>什么内容会被版权保护</h1><p>包括但不限于：</p><ul><li>文章封面图片</li><li>文章标题和正文</li><li>站点图片素材（不含主题自带素材）</li></ul><h1 id="例外情况"><a href="#例外情况" class="headerlink" title="例外情况"></a>例外情况</h1><p>本着友好互相进步的原则，被本站友链收录的博客允许博客文章内容的衍生品的分享和分发，但仍需标注出处。<br>本着互联网开放精神，你可以在博客文章下方留言要求授权博文的衍生品的分享和分发，标注你的网站地址。</p><h1 id="网站源代码协议"><a href="#网站源代码协议" class="headerlink" title="网站源代码协议"></a>网站源代码协议</h1><p>网站源代码（仅包含 css、js）的代码部分采用 GPL 协议。</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -537,18 +526,18 @@
       <link href="/cookies/index.html"/>
       <url>/cookies/index.html</url>
       
-        <content type="html"><![CDATA[<h1 id="更新日期"><a href="#更新日期" class="headerlink" title="更新日期"></a>更新日期</h1><p>本政策的最近更新日期为： 2024-1-15</p><p>为了确保网站和我开发的软件的可靠性、安全性和个性化，我使用 Cookies。当你接受 Cookies 时，这有助于通过识别你的身份、记住你的偏好或提供个性化用户体验来帮助我改善网站。</p><p>本政策应与我的隐私政策一起阅读，该隐私政策解释了我如何使用个人信息。</p><p>如果你对我使用你的个人信息或 Cookies 的方式有任何疑问，请通过 <a href="mailto:&#x62;&#114;&#x61;&#118;&#x65;&#46;&#121;&#x68;&#109;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#x62;&#114;&#x61;&#118;&#x65;&#46;&#121;&#x68;&#109;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a> 与我联系。</p><p>如果你想管理你的 Cookies，请按照下面“如何管理 Cookies”部分中的说明进行操作。</p><h1 id="什么是-Cookies？"><a href="#什么是-Cookies？" class="headerlink" title="什么是 Cookies？"></a>什么是 Cookies？</h1><p>Cookies 是一种小型文本文件，当你访问网站时，网站可能会将这些文件放在你的计算机或设备上。Cookies 会帮助网站或其他网站在你下次访问时识别你的设备。网站信标、像素或其他类似文件也可以做同样的事情。我在此政策中使用术语“Cookies”来指代以这种方式收集信息的所有文件。</p><p>Cookies 提供许多功能。例如，他们可以帮助我记住你喜欢深色模式还是浅色模式，分析我网站的效果。</p><p>大多数网站使用 Cookies 来收集和保留有关其访问者的个人信息。大多数 Cookies 收集一般信息，例如访问者如何到达和使用我的网站，他们使用的设备，他们的互联网协议地址（IP 地址），他们正在查看的页面及其大致位置（例如，我将能够认识到你正在从长沙访问我的网站）。</p><h1 id="Cookies-的目的"><a href="#Cookies-的目的" class="headerlink" title="Cookies 的目的"></a>Cookies 的目的</h1><h2 id="我将-Cookies-分为以下类别"><a href="#我将-Cookies-分为以下类别" class="headerlink" title="我将 Cookies 分为以下类别:"></a>我将 Cookies 分为以下类别:</h2><table><thead><tr><th>用途</th><th>说明</th></tr></thead><tbody><tr><td>授权</td><td>你访问我的网站时，我可通过 Cookie 提供正确信息，为你打造个性化的体验。例如：Cookie 会告知你通过搜索引擎搜索的具体内容来改善文章的标题优化关键词、或者创建更符合你搜索需求的文章内容。</td></tr><tr><td>安全措施</td><td>我通过 Cookie 启用及支持安全功能，监控和防止可疑活动、欺诈性流量和违反版权协议的行为。</td></tr><tr><td>偏好、功能和服务</td><td>我使用功能性 Cookies 来让我记住你的偏好，或保存你向我提供的有关你的喜好或其他信息。</td></tr><tr><td>个性化广告</td><td>本站涉及 GoogleADS 个性化广告服务</td></tr><tr><td>网站性能、分析和研究</td><td>我使用这些 cookie 来监控网站性能。这使我能够通过快速识别和解决出现的任何问题来提供高质量的体验。</td></tr></tbody></table><p>我还在我的网站上使用属于上述类别的第三方 Cookies，用于以下目的：</p><ul><li>帮助我监控网站上的流量；</li><li>识别欺诈或非人为性流量；</li><li>协助市场调研；</li><li>改善网站功能；</li><li>监督我的版权协议和隐私政策的遵守情况。</li></ul><table><thead><tr><th>第三方服务商</th><th>用途</th></tr></thead><tbody><tr><td>baidu.com</td><td>用于统计站内访问情况，进行针对性优化</td></tr><tr><td>ibruce.info</td><td>busuznzi 统计，用于区分访问 pv 数量和 uv 数量，在文章处展示人气</td></tr></tbody></table><h1 id="如何管理-Cookies？"><a href="#如何管理-Cookies？" class="headerlink" title="如何管理 Cookies？"></a>如何管理 Cookies？</h1><p>在将 Cookie 放置在你的计算机或设备上之前，系统会显示一个弹出窗口，要求你同意设置这些 Cookie。通过同意放置 Cookies，你可以让我为你提供最佳的体验和服务。如果你愿意，你可以通过浏览器设置关闭本站的 Cookie 来拒绝同意放置 Cookies；但是，我网站的部分功能可能无法完全或按预期运行。你有机会允许和&#x2F;或拒绝使用 Cookie。你可以通过访问浏览器设置随时返回到你的 Cookie 偏好设置以查看和&#x2F;或删除它们。</p><p>除了我提供的控件之外，你还可以选择在 Internet 浏览器中启用或禁用 Cookie。大多数互联网浏览器还允许你选择是要禁用所有 Cookie 还是仅禁用第三方 Cookie。默认情况下，大多数互联网浏览器都接受 Cookie，但这可以更改。有关详细信息，请参阅 Internet 浏览器中的帮助菜单或设备随附的文档。</p><p>以下链接提供了有关如何在所有主流浏览器中控制 Cookie 的说明：</p><p><a href="https://support.google.com/chrome/answer/95647?hl=en">Google Chrome</a><br><a href="https://support.microsoft.com/en-us/help/260971/description-of-cookies">IE</a><br><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac">Safari（mac 桌面版）</a><br><a href="https://support.apple.com/en-us/105082">Safari（移动版）</a><br><a href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox">火狐浏览器</a><br><a href="https://support.google.com/nexus/answer/54068?visit_id=638408914849170450-3062025067&hl=en&rd=1">Android 浏览器</a></p><p>如你使用其他浏览器，请参阅浏览器制造商提供的文档。<br>有关 Cookies 以及如何管理 Cookies 的更多信息，请访问：</p><p><a href="https://zh.wikipedia.org/wiki/Cookie">wikipedia.org</a> 、 <a href="https://allaboutcookies.org/">allaboutCookies.org</a> 或 <a href="https://www.aboutcookies.org/">aboutCookies.org</a></p><h1 id="更多信息"><a href="#更多信息" class="headerlink" title="更多信息"></a>更多信息</h1><p>有关我数据处理的更多信息，请参阅我的隐私政策。如果你对此 Cookie 政策有任何疑问，请通过<a href="mailto:&#x62;&#114;&#97;&#118;&#x65;&#x2e;&#121;&#104;&#109;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;">&#x62;&#114;&#97;&#118;&#x65;&#x2e;&#121;&#104;&#109;&#x40;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;</a>与我联系。</p><h1 id="对此-Cookie-政策的更改"><a href="#对此-Cookie-政策的更改" class="headerlink" title="对此 Cookie 政策的更改"></a>对此 Cookie 政策的更改</h1><p>我可能对此 Cookie 政策所做的任何更改都将发布在此页面上。如果更改很重要，我会在我的主页或应用上明确指出该政策已更新。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="更新日期"><a href="#更新日期" class="headerlink" title="更新日期"></a>更新日期</h1><p>本政策的最近更新日期为： 2024-1-15</p><p>为了确保网站和我开发的软件的可靠性、安全性和个性化，我使用 Cookies。当你接受 Cookies 时，这有助于通过识别你的身份、记住你的偏好或提供个性化用户体验来帮助我改善网站。</p><p>本政策应与我的隐私政策一起阅读，该隐私政策解释了我如何使用个人信息。</p><p>如果你对我使用你的个人信息或 Cookies 的方式有任何疑问，请通过 <a href="mailto:&#98;&#114;&#97;&#118;&#101;&#x2e;&#x79;&#104;&#x6d;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#98;&#114;&#97;&#118;&#101;&#x2e;&#x79;&#104;&#x6d;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a> 与我联系。</p><p>如果你想管理你的 Cookies，请按照下面“如何管理 Cookies”部分中的说明进行操作。</p><h1 id="什么是-Cookies？"><a href="#什么是-Cookies？" class="headerlink" title="什么是 Cookies？"></a>什么是 Cookies？</h1><p>Cookies 是一种小型文本文件，当你访问网站时，网站可能会将这些文件放在你的计算机或设备上。Cookies 会帮助网站或其他网站在你下次访问时识别你的设备。网站信标、像素或其他类似文件也可以做同样的事情。我在此政策中使用术语“Cookies”来指代以这种方式收集信息的所有文件。</p><p>Cookies 提供许多功能。例如，他们可以帮助我记住你喜欢深色模式还是浅色模式，分析我网站的效果。</p><p>大多数网站使用 Cookies 来收集和保留有关其访问者的个人信息。大多数 Cookies 收集一般信息，例如访问者如何到达和使用我的网站，他们使用的设备，他们的互联网协议地址（IP 地址），他们正在查看的页面及其大致位置（例如，我将能够认识到你正在从长沙访问我的网站）。</p><h1 id="Cookies-的目的"><a href="#Cookies-的目的" class="headerlink" title="Cookies 的目的"></a>Cookies 的目的</h1><h2 id="我将-Cookies-分为以下类别"><a href="#我将-Cookies-分为以下类别" class="headerlink" title="我将 Cookies 分为以下类别:"></a>我将 Cookies 分为以下类别:</h2><table><thead><tr><th>用途</th><th>说明</th></tr></thead><tbody><tr><td>授权</td><td>你访问我的网站时，我可通过 Cookie 提供正确信息，为你打造个性化的体验。例如：Cookie 会告知你通过搜索引擎搜索的具体内容来改善文章的标题优化关键词、或者创建更符合你搜索需求的文章内容。</td></tr><tr><td>安全措施</td><td>我通过 Cookie 启用及支持安全功能，监控和防止可疑活动、欺诈性流量和违反版权协议的行为。</td></tr><tr><td>偏好、功能和服务</td><td>我使用功能性 Cookies 来让我记住你的偏好，或保存你向我提供的有关你的喜好或其他信息。</td></tr><tr><td>个性化广告</td><td>本站涉及 GoogleADS 个性化广告服务</td></tr><tr><td>网站性能、分析和研究</td><td>我使用这些 cookie 来监控网站性能。这使我能够通过快速识别和解决出现的任何问题来提供高质量的体验。</td></tr></tbody></table><p>我还在我的网站上使用属于上述类别的第三方 Cookies，用于以下目的：</p><ul><li>帮助我监控网站上的流量；</li><li>识别欺诈或非人为性流量；</li><li>协助市场调研；</li><li>改善网站功能；</li><li>监督我的版权协议和隐私政策的遵守情况。</li></ul><table><thead><tr><th>第三方服务商</th><th>用途</th></tr></thead><tbody><tr><td>baidu.com</td><td>用于统计站内访问情况，进行针对性优化</td></tr><tr><td>ibruce.info</td><td>busuznzi 统计，用于区分访问 pv 数量和 uv 数量，在文章处展示人气</td></tr></tbody></table><h1 id="如何管理-Cookies？"><a href="#如何管理-Cookies？" class="headerlink" title="如何管理 Cookies？"></a>如何管理 Cookies？</h1><p>在将 Cookie 放置在你的计算机或设备上之前，系统会显示一个弹出窗口，要求你同意设置这些 Cookie。通过同意放置 Cookies，你可以让我为你提供最佳的体验和服务。如果你愿意，你可以通过浏览器设置关闭本站的 Cookie 来拒绝同意放置 Cookies；但是，我网站的部分功能可能无法完全或按预期运行。你有机会允许和&#x2F;或拒绝使用 Cookie。你可以通过访问浏览器设置随时返回到你的 Cookie 偏好设置以查看和&#x2F;或删除它们。</p><p>除了我提供的控件之外，你还可以选择在 Internet 浏览器中启用或禁用 Cookie。大多数互联网浏览器还允许你选择是要禁用所有 Cookie 还是仅禁用第三方 Cookie。默认情况下，大多数互联网浏览器都接受 Cookie，但这可以更改。有关详细信息，请参阅 Internet 浏览器中的帮助菜单或设备随附的文档。</p><p>以下链接提供了有关如何在所有主流浏览器中控制 Cookie 的说明：</p><p><a href="https://support.google.com/chrome/answer/95647?hl=en">Google Chrome</a><br><a href="https://support.microsoft.com/en-us/help/260971/description-of-cookies">IE</a><br><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac">Safari（mac 桌面版）</a><br><a href="https://support.apple.com/en-us/105082">Safari（移动版）</a><br><a href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox">火狐浏览器</a><br><a href="https://support.google.com/nexus/answer/54068?visit_id=638408914849170450-3062025067&hl=en&rd=1">Android 浏览器</a></p><p>如你使用其他浏览器，请参阅浏览器制造商提供的文档。<br>有关 Cookies 以及如何管理 Cookies 的更多信息，请访问：</p><p><a href="https://zh.wikipedia.org/wiki/Cookie">wikipedia.org</a> 、 <a href="https://allaboutcookies.org/">allaboutCookies.org</a> 或 <a href="https://www.aboutcookies.org/">aboutCookies.org</a></p><h1 id="更多信息"><a href="#更多信息" class="headerlink" title="更多信息"></a>更多信息</h1><p>有关我数据处理的更多信息，请参阅我的隐私政策。如果你对此 Cookie 政策有任何疑问，请通过<a href="mailto:&#x62;&#x72;&#97;&#x76;&#x65;&#46;&#x79;&#104;&#109;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x62;&#x72;&#97;&#x76;&#x65;&#46;&#x79;&#104;&#109;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a>与我联系。</p><h1 id="对此-Cookie-政策的更改"><a href="#对此-Cookie-政策的更改" class="headerlink" title="对此 Cookie 政策的更改"></a>对此 Cookie 政策的更改</h1><p>我可能对此 Cookie 政策所做的任何更改都将发布在此页面上。如果更改很重要，我会在我的主页或应用上明确指出该政策已更新。</p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>即刻短文</title>
-      <link href="/essay/index.html"/>
-      <url>/essay/index.html</url>
+      <title>版权协议</title>
+      <link href="/copyright/index.html"/>
+      <url>/copyright/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="版权协议"><a href="#版权协议" class="headerlink" title="版权协议"></a>版权协议</h1><p>为了保持文章质量，并保持互联网的开放共享精神，保持页面流量的稳定，综合考虑下本站的所有原创文章均采用 cc 协议中比较严格的<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">署名-非商业性使用-禁止演绎 4.0 国际标准</a>。这篇文章主要想能够更加清楚明白的介绍本站的协议标准和要求。方便你合理的使用本站的文章。</p><p>本站无广告嵌入和商业行为。违反协议的行为不仅会损害原作者的创作热情，而且会影响整个版权环境。强烈呼吁你能够在转载时遵守协议。遵守协议的行为几乎不会对你的目标产生负面影响，鼓励创作环境是每个创作者的期望。</p><h1 id="哪些文章适于本协议？"><a href="#哪些文章适于本协议？" class="headerlink" title="哪些文章适于本协议？"></a>哪些文章适于本协议？</h1><p>所有原创内容均在文章标题顶部，以及文章结尾的版权说明部分展示。<br>原创内容的非商用转载必须为完整转载且标注出处的带有完整 url 链接或访问原文之类字样的超链接。<br>作为参考资料的情况可以无需完整转载，摘录所需要的部分内容即可，但需标注出处。</p><h1 id="你可以做什么？"><a href="#你可以做什么？" class="headerlink" title="你可以做什么？"></a>你可以做什么？</h1><p>只要你遵守本页的许可，你可以自由地共享文章的内容 — 在任何媒介以任何形式复制、发行本作品。并且无需通知作者。</p><h1 id="你需要遵守什么样的许可？"><a href="#你需要遵守什么样的许可？" class="headerlink" title="你需要遵守什么样的许可？"></a>你需要遵守什么样的许可？</h1><h2 id="署名"><a href="#署名" class="headerlink" title="署名"></a>署名</h2><p>你必须标注内容的来源，你需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接提升阅读体验）。</p><h1 id="禁止商用"><a href="#禁止商用" class="headerlink" title="禁止商用"></a>禁止商用</h1><p>本站内容免费向互联网所有用户提供，分享本站文章时禁止商业性使用、禁止在转载页面中插入广告（例如谷歌广告、百度广告）、禁止阅读的拦截行为（例如关注公众号、下载 App 后观看文章）。</p><h1 id="禁止演绎"><a href="#禁止演绎" class="headerlink" title="禁止演绎"></a>禁止演绎</h1><ul><li>分享全部内容（无修改）</li><li>你需要在文章开头部分（或者明显位置）标注原文章链接（建议使用超链接）</li><li>分享部分截取内容或者衍生创作</li><li>目前本站全部原创文章的衍生品禁止公开分享和分发。如有更好的修改建议，可以在对应文章下留言。如有衍生创作需求，可以在评论中联系。</li><li>作为参考资料截取部分内容</li><li>作为参考资料的情况可以无需完整转载，摘录所需要的部分内容即可，但需标注出处。</li></ul><h1 id="什么内容会被版权保护"><a href="#什么内容会被版权保护" class="headerlink" title="什么内容会被版权保护"></a>什么内容会被版权保护</h1><p>包括但不限于：</p><ul><li>文章封面图片</li><li>文章标题和正文</li><li>站点图片素材（不含主题自带素材）</li></ul><h1 id="例外情况"><a href="#例外情况" class="headerlink" title="例外情况"></a>例外情况</h1><p>本着友好互相进步的原则，被本站友链收录的博客允许博客文章内容的衍生品的分享和分发，但仍需标注出处。<br>本着互联网开放精神，你可以在博客文章下方留言要求授权博文的衍生品的分享和分发，标注你的网站地址。</p><h1 id="网站源代码协议"><a href="#网站源代码协议" class="headerlink" title="网站源代码协议"></a>网站源代码协议</h1><p>网站源代码（仅包含 css、js）的代码部分采用 GPL 协议。</p>]]></content>
       
     </entry>
     
@@ -569,6 +558,17 @@
       <title>fcircle</title>
       <link href="/fcircle/index.html"/>
       <url>/fcircle/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>即刻短文</title>
+      <link href="/essay/index.html"/>
+      <url>/essay/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -599,17 +599,6 @@
     
     
     <entry>
-      <title>隐私政策 privacy</title>
-      <link href="/privacy/index.html"/>
-      <url>/privacy/index.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="隐私政策"><a href="#隐私政策" class="headerlink" title="隐私政策"></a>隐私政策</h1><p>本站非常重视用户的隐私和个人信息保护。你在使用网站时，可能会收集和使用你的相关信息。通过《隐私政策》向你说明在你访问 91hm.github.io 网站时，如何收集、使用、保存、共享和转让这些信息。</p><h1 id="最新更新时间"><a href="#最新更新时间" class="headerlink" title="最新更新时间"></a>最新更新时间</h1><p>协议最新更新时间为： 2024-1-15</p><h1 id="一、在访问时如何收集和使用你的个人信息"><a href="#一、在访问时如何收集和使用你的个人信息" class="headerlink" title="一、在访问时如何收集和使用你的个人信息"></a>一、在访问时如何收集和使用你的个人信息</h1><p>在访问时，收集访问信息的服务会收集不限于以下信息：</p><p>网络身份标识信息（浏览器 UA、IP 地址）</p><p>设备信息</p><p>浏览过程操作方式、浏览方式与时长、性能与网络加载情况）。<br>在访问时，本站内置的第三方服务会通过以下或更多途径，来获取你的以下或更多信息：</p><ul><li>百度统计工具 会收集你的访问信息、访问操作过程</li><li>谷歌统计工具 会收集你的访问信息、访问操作过程</li><li>51la 统计工具 会收集你的访问信息</li><li>网易云 音乐 会收集你的访问信息</li></ul><p>在访问时，本人仅会处于以下目的，使用你的个人信息：</p><ul><li>用于网站的优化与文章分类，用户优化文章</li><li>恶意访问识别，用于维护网站</li><li>恶意攻击排查，用于维护网站</li><li>网站点击情况监测，用于优化网站页面</li><li>网站加载情况监测，用于优化网站性能</li><li>用于网站搜索结果优化</li><li>浏览数据的展示</li></ul><p>第三方信息获取方将您的数据用于以下用途：</p><p>第三方可能会用于其他目的，详情请访问对应第三方服务提供的隐私协议。<br>你应该知道在你访问的时候不限于以下信息会被第三方获取并使用：</p><p>第三方部分为了抵抗攻击、使用不同节点 cdn 加速等需求会收集不限于以下信息</p><h1 id="二、在评论时如何收集和使用你的个人信息"><a href="#二、在评论时如何收集和使用你的个人信息" class="headerlink" title="二、在评论时如何收集和使用你的个人信息"></a>二、在评论时如何收集和使用你的个人信息</h1><p>评论使用的是无登陆系统的匿名评论系统，你可以自愿填写真实的、或者虚假的信息作为你评论的展示信息。</p><p>鼓励你使用不易被人恶意识别的昵称进行评论，但是建议你填写真实的邮箱以便收到回复（邮箱信息不会被公开）。</p><p>在你评论时，会额外收集你的个人信息。<br>在评论时，本站内置的第三方服务会通过以下或更多途径，来获取你的相关信息：</p><ul><li>cravatar 会收集你的访问信息、评论填写的个人信息用于展示头像</li></ul><p>在访问时，本人仅会处于以下目的，收集并使用以下信息：</p><ul><li>评论时会记录你的 QQ 帐号（如果在邮箱位置填写 QQ 邮箱或 QQ 号），方便获取你的 QQ 头像。如果使用 QQ 邮箱但不想展示 QQ 头像，可以填写不含 QQ 号的 QQ 邮箱。（主动，存储）</li><li>评论时会记录你的邮箱，当我回复后会通过邮件通知你（主动，存储，不会公开邮箱）</li><li>评论时会记录你的网址，用于点击头像时快速进入你的网站（主动，存储）</li><li>评论时会记录你的 IP 地址，作为反垃圾的用户判别依据（被动，存储，不会公开 IP，会公开 IP 所在城市）</li><li>评论会记录你的浏览器代理，用作展示系统版本、浏览器版本方便展示你使用的设备，快速定位问题（被动，存储）</li></ul><h1 id="三、如何使用-Cookies-和本地-LocalStorage-存储"><a href="#三、如何使用-Cookies-和本地-LocalStorage-存储" class="headerlink" title="三、如何使用-Cookies-和本地-LocalStorage-存储"></a>三、如何使用-Cookies-和本地-LocalStorage-存储</h1><p>本站为实现无账号评论、深色模式切换，不蒜子的 uv 统计等功能，会在你的浏览器中进行本地存储，你可以随时清除浏览器中保存的所有 Cookies 以及 LocalStorage，不影响你的正常使用。</p><p>本博客中的以下业务会在你的计算机上主动存储数据：</p><p>内置服务</p><ul><li>评论系统</li><li>即刻短文</li><li>鱼塘</li><li>中控台</li><li>胶囊音乐</li></ul><p>第三方服务</p><ul><li>百度统计</li><li>谷歌 统计</li><li>busuanzi 统计</li></ul><p>关于如何使用你的 Cookies，请访问 Cookies 政策。</p><p>关于如何<a href="https://support.google.com/chrome/answer/95647?co=GENIE.Platform=Desktop&hl=zh-Hans">在 Chrome 中清除、启用和管理 Cookie</a>。</p><h1 id="四、如何共享、转让你的个人信息"><a href="#四、如何共享、转让你的个人信息" class="headerlink" title="四、如何共享、转让你的个人信息"></a>四、如何共享、转让你的个人信息</h1><p>本人不会与任何公司、组织和个人共享你的隐私信息</p><p>本人不会将你的个人信息转让给任何公司、组织和个人</p><p>第三方服务的共享、转让情况详见对应服务的隐私协议</p><h1 id="五、附属协议"><a href="#五、附属协议" class="headerlink" title="五、附属协议"></a>五、附属协议</h1><p>当监测到存在恶意访问、恶意请求、恶意攻击、恶意评论的行为时，为了防止增大受害范围，可能会临时将你的 ip 地址及访问信息短期内添加到黑名单，短期内禁止访问。</p><p>此黑名单可能被公开，并共享给其他站点（主体并非本人）使用，包括但不限于：IP 地址、设备信息、地理位置。</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>link</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
@@ -626,6 +615,17 @@
       <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>隐私政策 privacy</title>
+      <link href="/privacy/index.html"/>
+      <url>/privacy/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="隐私政策"><a href="#隐私政策" class="headerlink" title="隐私政策"></a>隐私政策</h1><p>本站非常重视用户的隐私和个人信息保护。你在使用网站时，可能会收集和使用你的相关信息。通过《隐私政策》向你说明在你访问 91hm.github.io 网站时，如何收集、使用、保存、共享和转让这些信息。</p><h1 id="最新更新时间"><a href="#最新更新时间" class="headerlink" title="最新更新时间"></a>最新更新时间</h1><p>协议最新更新时间为： 2024-1-15</p><h1 id="一、在访问时如何收集和使用你的个人信息"><a href="#一、在访问时如何收集和使用你的个人信息" class="headerlink" title="一、在访问时如何收集和使用你的个人信息"></a>一、在访问时如何收集和使用你的个人信息</h1><p>在访问时，收集访问信息的服务会收集不限于以下信息：</p><p>网络身份标识信息（浏览器 UA、IP 地址）</p><p>设备信息</p><p>浏览过程操作方式、浏览方式与时长、性能与网络加载情况）。<br>在访问时，本站内置的第三方服务会通过以下或更多途径，来获取你的以下或更多信息：</p><ul><li>百度统计工具 会收集你的访问信息、访问操作过程</li><li>谷歌统计工具 会收集你的访问信息、访问操作过程</li><li>51la 统计工具 会收集你的访问信息</li><li>网易云 音乐 会收集你的访问信息</li></ul><p>在访问时，本人仅会处于以下目的，使用你的个人信息：</p><ul><li>用于网站的优化与文章分类，用户优化文章</li><li>恶意访问识别，用于维护网站</li><li>恶意攻击排查，用于维护网站</li><li>网站点击情况监测，用于优化网站页面</li><li>网站加载情况监测，用于优化网站性能</li><li>用于网站搜索结果优化</li><li>浏览数据的展示</li></ul><p>第三方信息获取方将您的数据用于以下用途：</p><p>第三方可能会用于其他目的，详情请访问对应第三方服务提供的隐私协议。<br>你应该知道在你访问的时候不限于以下信息会被第三方获取并使用：</p><p>第三方部分为了抵抗攻击、使用不同节点 cdn 加速等需求会收集不限于以下信息</p><h1 id="二、在评论时如何收集和使用你的个人信息"><a href="#二、在评论时如何收集和使用你的个人信息" class="headerlink" title="二、在评论时如何收集和使用你的个人信息"></a>二、在评论时如何收集和使用你的个人信息</h1><p>评论使用的是无登陆系统的匿名评论系统，你可以自愿填写真实的、或者虚假的信息作为你评论的展示信息。</p><p>鼓励你使用不易被人恶意识别的昵称进行评论，但是建议你填写真实的邮箱以便收到回复（邮箱信息不会被公开）。</p><p>在你评论时，会额外收集你的个人信息。<br>在评论时，本站内置的第三方服务会通过以下或更多途径，来获取你的相关信息：</p><ul><li>cravatar 会收集你的访问信息、评论填写的个人信息用于展示头像</li></ul><p>在访问时，本人仅会处于以下目的，收集并使用以下信息：</p><ul><li>评论时会记录你的 QQ 帐号（如果在邮箱位置填写 QQ 邮箱或 QQ 号），方便获取你的 QQ 头像。如果使用 QQ 邮箱但不想展示 QQ 头像，可以填写不含 QQ 号的 QQ 邮箱。（主动，存储）</li><li>评论时会记录你的邮箱，当我回复后会通过邮件通知你（主动，存储，不会公开邮箱）</li><li>评论时会记录你的网址，用于点击头像时快速进入你的网站（主动，存储）</li><li>评论时会记录你的 IP 地址，作为反垃圾的用户判别依据（被动，存储，不会公开 IP，会公开 IP 所在城市）</li><li>评论会记录你的浏览器代理，用作展示系统版本、浏览器版本方便展示你使用的设备，快速定位问题（被动，存储）</li></ul><h1 id="三、如何使用-Cookies-和本地-LocalStorage-存储"><a href="#三、如何使用-Cookies-和本地-LocalStorage-存储" class="headerlink" title="三、如何使用-Cookies-和本地-LocalStorage-存储"></a>三、如何使用-Cookies-和本地-LocalStorage-存储</h1><p>本站为实现无账号评论、深色模式切换，不蒜子的 uv 统计等功能，会在你的浏览器中进行本地存储，你可以随时清除浏览器中保存的所有 Cookies 以及 LocalStorage，不影响你的正常使用。</p><p>本博客中的以下业务会在你的计算机上主动存储数据：</p><p>内置服务</p><ul><li>评论系统</li><li>即刻短文</li><li>鱼塘</li><li>中控台</li><li>胶囊音乐</li></ul><p>第三方服务</p><ul><li>百度统计</li><li>谷歌 统计</li><li>busuanzi 统计</li></ul><p>关于如何使用你的 Cookies，请访问 Cookies 政策。</p><p>关于如何<a href="https://support.google.com/chrome/answer/95647?co=GENIE.Platform=Desktop&hl=zh-Hans">在 Chrome 中清除、启用和管理 Cookie</a>。</p><h1 id="四、如何共享、转让你的个人信息"><a href="#四、如何共享、转让你的个人信息" class="headerlink" title="四、如何共享、转让你的个人信息"></a>四、如何共享、转让你的个人信息</h1><p>本人不会与任何公司、组织和个人共享你的隐私信息</p><p>本人不会将你的个人信息转让给任何公司、组织和个人</p><p>第三方服务的共享、转让情况详见对应服务的隐私协议</p><h1 id="五、附属协议"><a href="#五、附属协议" class="headerlink" title="五、附属协议"></a>五、附属协议</h1><p>当监测到存在恶意访问、恶意请求、恶意攻击、恶意评论的行为时，为了防止增大受害范围，可能会临时将你的 ip 地址及访问信息短期内添加到黑名单，短期内禁止访问。</p><p>此黑名单可能被公开，并共享给其他站点（主体并非本人）使用，包括但不限于：IP 地址、设备信息、地理位置。</p>]]></content>
       
     </entry>
     
