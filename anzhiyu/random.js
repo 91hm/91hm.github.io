@@ -1,4 +1,4 @@
-var posts=["posts/a78a731.html","posts/542c2ed6.html","posts/2d764f9d.html","posts/1bbf064f.html","posts/55e45a70.html","posts/a6e157d3.html","posts/555df561.html","posts/ee9ce046.html","posts/ff4f9ac7.html","posts/7c62e317.html","posts/49a026b8.html","posts/fa424de8.html","posts/45229b10.html","posts/6d3a0a06.html","posts/cd52224a.html","posts/a223fbab.html","posts/a9ad7e4c.html","posts/b49dc1a8.html","posts/8f1686ee.html","posts/dac40ba7.html","posts/1a1b695f.html"];function toRandomPost(){
+var posts=["posts/542c2ed6.html","posts/a78a731.html","posts/adc9b3fe.html","posts/9f90b665.html","posts/2d764f9d.html","posts/1bbf064f.html","posts/55e45a70.html","posts/555df561.html","posts/ff4f9ac7.html","posts/a6e157d3.html","posts/ee9ce046.html","posts/7c62e317.html","posts/49a026b8.html","posts/fa424de8.html","posts/45229b10.html","posts/6d3a0a06.html","posts/a9ad7e4c.html","posts/cd52224a.html","posts/b49dc1a8.html","posts/dac40ba7.html","posts/a223fbab.html","posts/8f1686ee.html","posts/1a1b695f.html"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };var friend_link_list=[];
     var refreshNum = 1;
